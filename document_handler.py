@@ -18,7 +18,7 @@ fH=FileHandler()
 fH.load_text()
 fH.get_paragraphs_and_formulas(1)
 #TODO:
-#1. basic file handler - to text
-#2. separation by backslash instructions
+#1. basic file handler - to text (DONE)
+#2. getting paragraphs/chunks of text and formulas into lists
 #3. using imported method for checking plagarism
 #4. (BONUS) generate html report
