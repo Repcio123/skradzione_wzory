@@ -5,17 +5,17 @@ import os
 
 class TexExtractor:
     MATH_SYMBOLS = ["$", "equation"]
-    OTHER_SYMBOLS = ["maketitle", "section"]
 
     @staticmethod   
     def separateTextAndEquationNodes(soup: TexSoup):
         document_body = soup.document
-        symbols = [x for x in document_body.children if x.name in TexExtractor.MATH_SYMBOLS]
+        symbols = document_body.find_all(TexExtractor.MATH_SYMBOLS)
         for index, symbol in enumerate(symbols):
             temp = symbol.copy()
             symbol.replace_with("") 
             symbols[index] = temp.contents
-        return document_body.contents, symbols
+        clearedParagraphs = sum([getattr(x, 'contents', [x]) for x in document_body], [])
+        return clearedParagraphs, symbols
 
     @staticmethod
     def nodeListToString(nodeList):
@@ -33,7 +33,6 @@ if __name__ == "__main__":
     documentText = TexExtractor.nodeListToString(paragraphNodes)
     documentEquations = TexExtractor.nodeListToString(equationNodes)
 
-    print(paragraphNodes[2])
     JUNK = [",", " ", "."]
 
     text_similarity_ratio = SequenceMatcher(lambda x: x in JUNK, documentText, documentText).ratio()
