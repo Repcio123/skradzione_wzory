@@ -1,0 +1,2 @@
+['\n    L(x) = ', \sum, '_', {i=0}, '^', {n}, ' y_i ', \prod, '_', {\substack{j=0 \\ j \neq i}}, '^', {n}, \frac{x - x_j}{x_i - x_j}]
+['\n    E(x) = ', \frac{f^{(n+1)}(\xi)}{(n+1)!}, \prod, '_', {i=0}, '^', {n}, '(x - x_i)\n']

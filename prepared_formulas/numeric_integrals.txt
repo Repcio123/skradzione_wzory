@@ -1,0 +1,7 @@
+['f(x)']
+['[', 'a, b', ']']
+['n']
+[\int, '_', {a}, '^', {b}, ' f(x) dx ', \approx, \frac{b - a}{2n}, \left[f, '(a) + 2f(x_1) + 2f(x_2) + ', \ldots, ' + 2f(x_', {n-1}, ') + f(b)', \right],]
+['x_i = a + i', \Delta, ' x']
+[\Delta, ' x = (b - a)/n']
+[\int, '_', {a}, '^', {b}, ' f(x) dx ', \approx, \frac{b - a}{3n}, \left[f, '(a) + 4f(x_1) + 2f(x_2) + 4f(x_3) + 2f(x_4) + ', \ldots, ' + 2f(x_', {n-2}, ') + 4f(x_', {n-1}, ') + f(b)', \right].]

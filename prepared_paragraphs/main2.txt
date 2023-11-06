@@ -1,0 +1,85 @@
+
+The well known Pythagorean theorem 
+x^2 + y^2 = z^2
+ was 
+proved to be invalid for other exponents. 
+Meaning the next equation has no integer solutions:
+
+
+ x^n + y^n = z^n 
+ Standard 
+ practice is to write inline math by enclosing it between 
+|
+...
+|:
+
+
+
+In physics, the mass-energy equivalence is stated 
+by the equation 
+\(E=mc^2\)
+, discovered in 1905 by Albert Einstein.
+
+ Instead if writing (enclosing) inline math between 
+|
+...
+| you can use 
+\$
+...
+\$
+ to achieve the same result:
+
+
+
+In physics, the mass-energy equivalence is stated 
+by the equation 
+
+, discovered in 1905 by Albert Einstein.
+
+ Or, you can use 
+|
+...
+|:
+
+
+
+In physics, the mass-energy equivalence is stated 
+by the equation 
+\begin{math}E=mc^2\end{math}
+, discovered in 1905 by Albert Einstein.
+
+
+The mass-energy equivalence is described by the famous equation
+
+
+E=mc^2
+
+discovered in 1905 by Albert Einstein. 
+In natural units (
+
+ = 1), the formula expresses the identity
+
+
+
+
+This is a simple math expression 
+\sqrt{x^2+1}
+ inside text. 
+And this is also the same: 
+
+\sqrt{x^2+1}
+
+but by using another command.
+
+This is a simple math expression without numbering
+
+\sqrt{x^2+1}
+ 
+separated from text.
+
+This is also the same:
+
+\sqrt{x^2+1}
+ and this:
+
+\sqrt{x^2+1}
