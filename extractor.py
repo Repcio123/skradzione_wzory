@@ -4,7 +4,16 @@ from difflib import SequenceMatcher
 import os
 
 class TexExtractor:
-    MATH_SYMBOLS = ["$", "equation"]
+    MATH_SYMBOLS = ["$", "equation", "align"]
+
+    @staticmethod
+    def getContentsListFromNodeTree(node):
+        nodeListOrString = "NodeList" if hasattr(node, 'contents') else "String"
+        
+        if nodeListOrString == "String":
+            return [node]
+        
+        return sum([TexExtractor.getContentsListFromNodeTree(x) for x in node.contents], [])
 
     @staticmethod   
     def separateTextAndEquationNodes(soup: TexSoup):
@@ -14,7 +23,7 @@ class TexExtractor:
             temp = symbol.copy()
             symbol.replace_with("") 
             symbols[index] = temp.contents
-        clearedParagraphs = sum([getattr(x, 'contents', [x]) for x in document_body], [])
+        clearedParagraphs = TexExtractor.getContentsListFromNodeTree(document_body)
         return clearedParagraphs, symbols
 
     @staticmethod
@@ -32,7 +41,6 @@ if __name__ == "__main__":
     paragraphNodes, equationNodes = TexExtractor.separateTextAndEquationNodes(sampleText)
     documentText = TexExtractor.nodeListToString(paragraphNodes)
     documentEquations = TexExtractor.nodeListToString(equationNodes)
-
     JUNK = [",", " ", "."]
 
     text_similarity_ratio = SequenceMatcher(lambda x: x in JUNK, documentText, documentText).ratio()
