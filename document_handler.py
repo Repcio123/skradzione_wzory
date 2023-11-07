@@ -2,10 +2,8 @@ import os
 from TexSoup import TexSoup
 from extractor import TexExtractor
 import json
-import hashlib
 
 class DocumentListHandler:
-    cacheSeparator = "\n\n---\n\n"
     paragraphs: list[str] = []
     formulas: list[str] = []
     
