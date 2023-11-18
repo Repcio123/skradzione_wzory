@@ -1,8 +1,0 @@
-Introduction
-Principal component analysis (PCA) simplifies the complexity in high-dimensional data while retaining trends and patterns. It does this by transforming the data into fewer dimensions, which act as summaries of features. High-dimensional data are very common in biology and arise when multiple features, such as expression of many genes, are measured for each sample. This type of data presents several challenges that PCA mitigates: computational expense and an increased error rate due to multiple test correction when testing each feature for association with an outcome. PCA is an unsupervised learning method and is similar to clustering1—it finds patterns without reference to prior knowledge about whether the samples come from different treatment groups or have phenotypic differences.
-h
-\centering
-
-PCA stuff
-h
-\centering
