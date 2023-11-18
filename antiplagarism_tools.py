@@ -1,4 +1,5 @@
 import os
+
 class AntiPlagarism:
     word_threshold:int=15
     char_sensitivity:int=8 #one per this chars can be mismatched to give match
