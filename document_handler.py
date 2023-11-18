@@ -1,9 +1,9 @@
 import os
 from TexSoup import TexSoup
 from extractor import TexExtractor
+import json
 
 class DocumentListHandler:
-    test_cases: list[TexSoup] = []
     paragraphs: list[str] = []
     formulas: list[str] = []
     
@@ -16,20 +16,46 @@ class DocumentListHandler:
             except:
                 raise Exception(f"failed to parse latex")
 
-    def load_from_files(self, dir):
+
+    def load_from_files(self, dir, lazy = True):
+        paragraphsCacheFilename = "cached_paragraphs.json"
+        formulasCacheFilename = "cached_formulas.json"
+        text = None
+        formulas = None
+        if (lazy):
+            if os.access(f"{dir}/{paragraphsCacheFilename}", 1):
+                with open(f"{dir}/{paragraphsCacheFilename}", "r") as f:
+                    text = json.loads(f.read())
+            if os.access(f"{dir}/{formulasCacheFilename}", 1):
+                with open(f"{dir}/{formulasCacheFilename}", "r") as f:
+                    formulas = json.loads(f.read())
+            if text and formulas:
+                self.paragraphs = text
+                self.formulas = formulas
+                return
+        
         for file_name in os.listdir(dir):
-            soup = DocumentListHandler.initSoupFromTexFile(f"{dir}/{file_name}")
-            text, equations = TexExtractor.separateTextAndEquationNodes(soup)
-            self.paragraphs.append(TexExtractor.nodeListToString(text))
-            self.formulas.append(TexExtractor.nodeListToString(equations))
+            if file_name.split(".")[-1] == "tex":
+                file_path = f"{dir}/{file_name}"
+                soup = DocumentListHandler.initSoupFromTexFile(file_path)
+                text, formulas = TexExtractor.separateTextAndEquationNodes(soup)
+                self.paragraphs.append(TexExtractor.nodeListToString(text))
+                self.formulas.append(TexExtractor.nodeListToString(formulas))
+
+        with open(f"{dir}/{paragraphsCacheFilename}", "w") as f:
+            f.truncate(0)
+            f.write(json.dumps(self.paragraphs))
+        with open(f"{dir}/{formulasCacheFilename}", "w") as f:
+            f.truncate(0)
+            f.write(json.dumps(self.formulas))
 
 TEX_FOLDER_NAME = "tex_file_base"
 
 if __name__ == "__main__":
     file_handler = DocumentListHandler()
-    file_handler.load_from_files(f"{os.getcwd()}/{TEX_FOLDER_NAME}")
+    file_handler.load_from_files(f"{os.getcwd()}/{TEX_FOLDER_NAME}", lazy=True)
 
-    print(file_handler.paragraphs)
+    print(len(file_handler.formulas))
 
 #TODO:
 #1. basic file handler - to text (DONE)
