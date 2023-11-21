@@ -1,19 +1,46 @@
 import os
+from typing import Optional
+from weakref import WeakValueDictionary
+import hashlib
+
 from Levenshtein import distance as levenshtein_distance,matching_blocks as levenshtein_matching_blocks,editops as levenshtein_editops, ratio as levenshtein_similarity_ratio
+
+class CachedRecord:
+    hash_cache = WeakValueDictionary()
+    hash_function = hashlib.md5
+
+    def __init__(self, text: str):
+        self.text = text
+        CachedRecord.hash_cache[CachedRecord.encode(text)] = self
+    
+    @staticmethod
+    def encode(text: str) -> str:
+        return CachedRecord.hash_function(text.encode("utf-8")).hexdigest()
+
+    @staticmethod
+    def get(text) -> Optional[object]:
+        return CachedRecord.hash_cache.get(CachedRecord.encode(text))
+
+
 class AntiPlagarism:
     word_threshold:int=15
     char_sensitivity:int=8 #one per this chars can be mismatched to give match
-    text_base:list=[]
+    text_base: list[CachedRecord]=[]
+
     def load_file_base(self):
-        for file_name in os.listdir(os.getcwd()+"\\tex_file_base"):
-            with open(os.getcwd()+"\\tex_file_base\\"+file_name,"r") as file:
-                self.text_base+=[file.read()]
-    def by_chars(self, checked:str):
+        #  os.join for system interop (/ and \)
+        for file_name in os.listdir(os.path.join(os.getcwd(), "tex_file_base")):
+            with open(os.path.join(os.getcwd(), "tex_file_base", file_name), "r") as file:
+                self.text_base+=[CachedRecord(file.read())]
+
+    def by_chars(self, checked: str):
         ...
-    def by_words(self,checked:str):
+    def by_words(self,checked: str):
         ...
-    def by_hash(self,checked:str):
-        ...
+
+    def by_hash(self, checked: str) -> Optional[CachedRecord]:
+        return CachedRecord.get(checked)
+
     def with_nlp(self,checked:str):
         ...
     @staticmethod
@@ -37,8 +64,9 @@ class AntiPlagarism:
         # make a tree with separated operators as parent nodes and operands as children
         ...
 if __name__=='__main__':
-    distance,matches,ratio=AntiPlagarism.formula_check_levenshtein_simple('sitting','kitten')
-    print(f"Levenshtein distance for formulas:\nDistance: {distance}\nPercent: {ratio}%\nMatches: {matches}")
+    #distance,matches,ratio=AntiPlagarism.formula_check_levenshtein_simple('sitting','kitten')
+    #print(f"Levenshtein distance for formulas:\nDistance: {distance}\nPercent: {ratio}%\nMatches: {matches}")
+    test = "jd"
 
 #TODO:
 #0. preparation
