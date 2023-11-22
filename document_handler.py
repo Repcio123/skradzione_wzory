@@ -16,6 +16,19 @@ class DocumentListHandler:
             except:
                 raise Exception(f"failed to parse latex")
 
+    def file_modified(self, tex_folder_path: str, cache_path: str):
+        cache_mtime = os.path.getmtime("cached_formulas.json")
+
+        # Sprawdza pliki .tex
+        for file_name in os.listdir("tex_file_base"):
+            if file_name.endswith(".tex"):
+                tex_file_path = os.path.join("tex_file_base", file_name)
+                # Sprawdzenie modyfikacji
+                if os.path.getmtime(tex_file_path) > cache_mtime:
+                    return True
+
+        return False
+
 
     def load_from_files(self, dir, lazy = True):
         paragraphsCacheFilename = "cached_paragraphs.json"
@@ -48,6 +61,7 @@ class DocumentListHandler:
         with open(f"{dir}/{formulasCacheFilename}", "w") as f:
             f.truncate(0)
             f.write(json.dumps(self.formulas))
+
 
 TEX_FOLDER_NAME = "tex_file_base"
 
