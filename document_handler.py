@@ -16,7 +16,7 @@ class DocumentListHandler:
             except:
                 raise Exception(f"failed to parse latex")
 
-    def file_modified(self, tex_folder_path: str, cache_path: str):
+    def file_modified(self):
         cache_mtime = os.path.getmtime("cached_formulas.json")
 
         # Sprawdza pliki .tex
@@ -54,13 +54,13 @@ class DocumentListHandler:
                 text, formulas = TexExtractor.separateTextAndEquationNodes(soup)
                 self.paragraphs.append(TexExtractor.nodeListToString(text))
                 self.formulas.append(TexExtractor.nodeListToString(formulas))
-
-        with open(f"{dir}/{paragraphsCacheFilename}", "w") as f:
-            f.truncate(0)
-            f.write(json.dumps(self.paragraphs))
-        with open(f"{dir}/{formulasCacheFilename}", "w") as f:
-            f.truncate(0)
-            f.write(json.dumps(self.formulas))
+        if self.file_modified():
+            with open(f"{dir}/{paragraphsCacheFilename}", "w") as f:
+                f.truncate(0)
+                f.write(json.dumps(self.paragraphs))
+            with open(f"{dir}/{formulasCacheFilename}", "w") as f:
+                f.truncate(0)
+                f.write(json.dumps(self.formulas))
 
 
 TEX_FOLDER_NAME = "tex_file_base"
