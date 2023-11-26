@@ -2,6 +2,9 @@
 from Levenshtein import distance as levenshtein_distance,matching_blocks as levenshtein_matching_blocks,editops as levenshtein_editops, ratio as levenshtein_similarity_ratio
 from TexSoup import TexSoup
 from hashlib import md5
+from document_list_handler import DocumentListHandler
+from extractor import TexExtractor
+import os
 
 
 class AntiPlagarism:
@@ -18,8 +21,79 @@ class AntiPlagarism:
         ...
 
     @staticmethod
+    def compare_paragraph_hashes(testedDocument: TexSoup):
+        testedParagraphs, testedEquations = TexExtractor.separateTextAndEquationNodes(testedDocument)
+
+        document_list_handler = DocumentListHandler()
+        document_list_handler.load_from_files(os.path.join(os.getcwd(), "tex_file_base"), lazy=True)
+        
+        textSymbolCount = len(TexExtractor.nodeListToString(testedParagraphs))
+        equationSymbolCount = len(TexExtractor.nodeListToString(testedEquations))
+        assert textSymbolCount != 0 and equationSymbolCount != 0, "???"
+        matchedSections = []
+        
+        for document in document_list_handler.text_base:
+            paragraphs, equations = TexExtractor.separateTextAndEquationNodes(document)
+
+            for testedParagraph in testedParagraphs:
+                for paragraph in paragraphs:
+                    if AntiPlagarism.compare_hashes(testedParagraph, paragraph):
+                        matched = paragraph
+                        ratio = 100 * (len(paragraph) / textSymbolCount)
+                        matchedSections.append((matched, ratio))
+            
+            for testedEquation in testedEquations:
+                for equation in equations:
+                    if AntiPlagarism.compare_hashes(TexExtractor.nodeListToString(testedEquation), TexExtractor.nodeListToString(equation)):
+                        matched = equation
+                        ratio = 100 * (len(equation) / equationSymbolCount)
+                        matchedSections.append((matched, ratio))
+
+        list_of_matches = list(map(lambda x: x[0], matchedSections))
+        totalRatio = sum(map(lambda x: x[1], matchedSections))
+        # Nie wiem czym ma byc distance w tym przypadku
+        return list_of_matches, totalRatio
+
+    @staticmethod
+    def compare_content_hashes(testedDocument: TexSoup):
+
+        testedParagraphs, testedEquations = TexExtractor.separateTextAndEquationNodes(testedDocument)
+        testedFullTextContent = TexExtractor.nodeListToString(testedParagraphs)
+        testedFullEquationsContent = TexExtractor.nodeListToString(testedEquations)
+
+        document_list_handler = DocumentListHandler()
+        document_list_handler.load_from_files(os.path.join(os.getcwd(), "tex_file_base"), lazy=True)
+
+        #hash tests
+        for document in document_list_handler.text_base:
+            # porownaj po full content hash
+            paragraphs, equations = TexExtractor.separateTextAndEquationNodes(document)
+            fullTextContent = TexExtractor.nodeListToString(paragraphs)
+            fullEquationContent = TexExtractor.nodeListToString(equations)
+            matchedParagraphs = AntiPlagarism.compare_hashes(fullTextContent, testedFullTextContent)
+            matchedEquations = AntiPlagarism.compare_hashes(fullEquationContent, testedFullEquationsContent)
+
+            assert len(fullTextContent) * len(fullEquationContent) != 0, "Co ty odjaniepawlasz??"
+            symbolCount = len(fullTextContent) + len(fullEquationContent)
+
+            if matchedParagraphs and matchedEquations:
+                return 0, document, 1 
+
+            if matchedParagraphs:
+                distance = len(fullTextContent)
+                matched = fullTextContent
+                ratio = 100 * (len(fullTextContent) / symbolCount)
+                return distance, matched, ratio
+
+            if matchedEquations:
+                distance = len(fullEquationContent)
+                matched = fullEquationContent
+                ratio = 100 * (len(fullEquationContent) / symbolCount)
+                return distance, matched, ratio
+
+    @staticmethod
     def compare_hashes(testedDocument: str, otherDocument: str):
-        md5(testedDocument.encode()).hexdigest() == md5(otherDocument.encode()).hexdigest()
+        return md5(testedDocument.encode()).hexdigest() == md5(otherDocument.encode()).hexdigest()
 
     @staticmethod
     def formula_check_levenshtein_simple(str1: str,str2: str):
