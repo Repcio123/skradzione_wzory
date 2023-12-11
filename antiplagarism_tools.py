@@ -26,15 +26,19 @@ class AntiPlagarism:
         # simple levenshtein check, to be tweaked later
         # needs difference extrapolation about differences
         # distance is distance which we use to get a percentage
-        ...
-    def formula_check_cosine_simple(self,checked:str):
+    @staticmethod
+    def formula_split_symbols(formula:str):
+        long_name_symbols=["\Alpha","\\alpha","\Beta","\\beta","\\Gamma","\\gamma","  ","+","-","\\neg","!","\#"]
+    def formula_check_cosine_simple(self,l1:list,l2:list): #list of symbols
         # simple cosine check, to be tweaked later
         ...
     def formula_check_jaccard(self,checked:str):
         # need to separate stuff into a list with operators and symbols
         ...
-    def formula_check_tree_model(self,checked:str):
+    #def formula_check_tree_model(self,checked:str): #optional
         # make a tree with separated operators as parent nodes and operands as children
+        ...
+    #def with_nlp(self,checked:str):
         ...
 if __name__=='__main__':
     distance,matches,ratio=AntiPlagarism.formula_check_levenshtein_simple('sitting','kitten')
