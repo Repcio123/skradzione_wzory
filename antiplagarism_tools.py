@@ -5,7 +5,10 @@ from hashlib import md5
 from document_list_handler import DocumentListHandler
 from extractor import TexExtractor
 import os
-
+import numpy as np
+from numpy.linalg import norm
+from collections import Counter
+import math
 
 class AntiPlagarism:
     word_threshold: int = 15
@@ -22,10 +25,6 @@ class AntiPlagarism:
 
     def by_words(self, checked: str):
         ...
-
-    def by_hash(self, checked: str):
-        ...
-
     def with_nlp(self, checked: str):
         ...
 
@@ -116,12 +115,41 @@ class AntiPlagarism:
         # distance is distance which we use to get a percentage
     @staticmethod
     def formula_split_symbols(formula:str):
-        long_name_symbols=["\Alpha","\\alpha","\Beta","\\beta","\\Gamma","\\gamma","  ","+","-","\\neg","!","\#"]
-    def formula_check_cosine_simple(self,l1:list,l2:list): #list of symbols
-        # simple cosine check, to be tweaked later
-        ...
-
-    def formula_check_jaccard(self,checked:str):
+        long_name_symbols=["\Alpha","\\alpha","\Beta","\\beta","\\Gamma","\\gamma","\Delta","\\delta","\\neg","\#","\\frac"]
+        symbols_to_ignore=["{","}", " "]
+        split_symbols=[]
+        i=0
+        while(i<len(formula)):
+            if formula[i] not in symbols_to_ignore:
+                if formula[i]=="\\":
+                    long_symbol="\\"
+                    while((long_symbol not in long_name_symbols ) and (i<len(formula)-1) and (formula[i] not in symbols_to_ignore)):
+                        i+=1
+                        long_symbol+=formula[i]
+                    split_symbols+=[long_symbol.strip()]
+                else:
+                    split_symbols+=[formula[i]]
+            i+=1
+        return split_symbols 
+    @staticmethod
+    def formula_check_cosine(l1:list,l2:list): #list of symbols
+        vec1=Counter(l1)
+        vec2=Counter(l2)
+        intersection = set(vec1.keys()) & set(vec2.keys())
+        numerator = sum([vec1[x] * vec2[x] for x in intersection])
+        sum1 = sum([vec1[x] ** 2 for x in list(vec1.keys())])
+        sum2 = sum([vec2[x] ** 2 for x in list(vec2.keys())])
+        denominator = math.sqrt(sum1) * math.sqrt(sum2)
+        if not denominator:
+            return 0.0
+        else:
+            return float(numerator) / denominator
+        #can have a parameter to check by n symbol parts
+    @staticmethod
+    def formula_check_jaccard(l1:list,l2:list):
+        intersection = len(list(set(l1).intersection(l2)))
+        union = (len(set(l1)) + len(set(l2))) - intersection
+        return float(intersection) / union
         # need to separate stuff into a list with operators and symbols
         ...
     #def formula_check_tree_model(self,checked:str): #optional
@@ -136,10 +164,15 @@ if __name__=='__main__':
 
 
 if __name__ == '__main__':
-    distance, matches, ratio = AntiPlagarism.formula_check_levenshtein_simple(
-        'sitting', 'kitten')
-    print(
-        f"Levenshtein distance for formulas:\nDistance: {distance}\nPercent: {ratio}%\nMatches: {matches}")
+    #distance, matches, ratio = AntiPlagarism.formula_check_levenshtein_simple('sitting', 'kitten')
+    #print(f"Levenshtein distance for formulas:\nDistance: {distance}\nPercent: {ratio}%\nMatches: {matches}")
+    formula="z y ^ { 2 } = 4 x ^ { 3 } - g _ { 2 } z ^ { 2 } x - g _ { 3 } z ^ { 3 }"
+    split_symbols1=AntiPlagarism.formula_split_symbols(formula)
+    print(split_symbols1)
+    formula="_ { g f } - i \\varepsilon \\frac { 1 } { 2 } \\int A ^ { 2 } d ^ { 4 } x"
+    split_symbols2=AntiPlagarism.formula_split_symbols(formula)
+    print(split_symbols2)
+    print(AntiPlagarism.formula_check_cosine(split_symbols1,split_symbols2))
 
 
 # TODO:
