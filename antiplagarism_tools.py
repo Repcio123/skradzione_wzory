@@ -11,6 +11,7 @@ from collections import Counter
 import math
 from dataclasses import dataclass
 from typing import Callable
+import string_comparison
 
 test_document_folder_path = os.path.join(os.getcwd(), "tex_file_base")
 
@@ -123,8 +124,16 @@ class AntiPlagarism:
         tested_paragraphs, tested_equations = TexExtractor.separateTextAndEquationNodes(tested_document)
         tested_document_contents = TexExtractor.nodeListToString([*tested_paragraphs, *tested_equations])
         paragraphs, equations = TexExtractor.separateTextAndEquationNodes(other_document)
-        document_paragraphs = TexExtractor.nodeListToString([*paragraphs, *equations])
-        return AntiPlagarism.formula_check_levenshtein_simple(tested_document_contents, document_paragraphs)
+        document_contents = TexExtractor.nodeListToString([*paragraphs, *equations])
+        return AntiPlagarism.formula_check_levenshtein_simple(tested_document_contents, document_contents)
+
+    @staticmethod
+    def test_by_chars(tested_document: TexSoup, other_document: TexSoup):
+        tested_paragraphs, tested_equations = TexExtractor.separateTextAndEquationNodes(tested_document)
+        tested_document_contents = TexExtractor.nodeListToString([*tested_paragraphs, *tested_equations])
+        paragraphs, equations = TexExtractor.separateTextAndEquationNodes(other_document)
+        document_contents = TexExtractor.nodeListToString([*paragraphs, *equations])
+        return string_comparison.StringComparison.compareChars(tested_document_contents, document_contents)
 
     @staticmethod
     def formula_split_symbols(formula:str):
@@ -187,19 +196,15 @@ if __name__ == '__main__':
     results1 = antiPlagarism.compare_to_document_base(tested_document, AntiPlagarism.test_paragraph_hashes)
     results2 = antiPlagarism.compare_to_document_base(tested_document, AntiPlagarism.test_full_content_hashes)
     results3 = antiPlagarism.compare_to_document_base(tested_document, AntiPlagarism.test_lavenshtein_distance)
+    results4 = antiPlagarism.compare_to_document_base(tested_document, AntiPlagarism.test_by_chars)
     listdir = os.listdir(os.path.join("tex_file_base", "tex"))
 
-    results = list(zip(listdir, results1, results2, results3))
+    results = list(zip(listdir, results1, results2, results3, results4))
     print("results for file files_to_test/lagrange.tex:S")
-    for test_document, r1, r2, r3 in results:
-        print(
-            f"{test_document}:", 
-            f"{r1.method}: distance: {r1.distance}, match_count: {len(r1.matched)}, ratio: {r1.ratio}",
-            f"{r2.method}: distance: {r2.distance}, match_count: {len(r2.matched)}, ratio: {r2.ratio}",
-            f"{r3.method}: distance: {r3.distance}, match_count: {len(r3.matched)}, ratio: {r3.ratio}",
-            "-----------------------------------------------------------------",
-            sep="\n")
-
+    for test_document, *result in results:
+        print(f"{test_document}:")
+        for r in result:
+            print(f"{r.method}: distance: {r.distance}, match_count: {len(r.matched)}, ratio: {r.ratio}"),
 
 # TODO:
 # 0. preparation

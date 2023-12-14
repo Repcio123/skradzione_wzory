@@ -1,6 +1,8 @@
 from Levenshtein import distance as levenshtein_distance, matching_blocks as levenshtein_matching_blocks, editops as levenshtein_editops, ratio as levenshtein_similarity_ratio
 import json
 from difflib import SequenceMatcher
+from antiplagarism_tools import AntiPlagiatResult
+
 PARAGHRAPH_DEST = "tex_file_base/cached_paragraphs.json"
 MIN_LEN = 8
 MIN_DIST = 1
@@ -42,9 +44,9 @@ class StringComparison():
             if len(block1) >= MIN_LEN and len(block2) >= MIN_LEN:
                 same_str_blocks.append(block1)
                 match_pos.append(x)
-        same_str_blocks.append(
-            StringComparison.similarCharSequences(str1, str2))
-        return same_str_blocks, levenshtein_similarity_ratio(str1, str2)*100, match_pos
+        same_str_blocks.append(StringComparison.similarCharSequences(str1, str2))
+        return AntiPlagiatResult("compare chars", float('nan'), same_str_blocks, levenshtein_similarity_ratio(str1, str2)*100)
+
     @staticmethod
     def similarSentences(s1: str, s2: str):
         seq = []
