@@ -9,11 +9,25 @@ import numpy as np
 from numpy.linalg import norm
 from collections import Counter
 import math
+from dataclasses import dataclass
+from typing import Callable
+
+test_document_folder_path = os.path.join(os.getcwd(), "tex_file_base")
+
+@dataclass
+class AntiPlagiatResult:
+    method: str
+    distance: float
+    matched: list[str]
+    ratio: float
 
 class AntiPlagarism:
     word_threshold: int = 15
     char_sensitivity: int = 8  # one per this chars can be mismatched to give match
-    text_base: list = []
+    text_base: list[TexSoup] = []
+
+    def __init__(self, text_base) -> None:
+        self.text_base = text_base
 
     def load_file_base(self):
         for file_name in os.listdir(os.getcwd()+"\\tex_file_base"):
@@ -29,75 +43,65 @@ class AntiPlagarism:
         ...
 
     @staticmethod
-    def compare_paragraph_hashes(testedDocument: TexSoup):
-        testedParagraphs, testedEquations = TexExtractor.separateTextAndEquationNodes(testedDocument)
-
-        document_list_handler = DocumentListHandler()
-        document_list_handler.load_from_files(os.path.join(os.getcwd(), "tex_file_base"), lazy=True)
-        
-        textSymbolCount = len(TexExtractor.nodeListToString(testedParagraphs))
-        equationSymbolCount = len(TexExtractor.nodeListToString(testedEquations))
-        assert textSymbolCount != 0 and equationSymbolCount != 0, "???"
+    def compare_paragraph_hashes(paragraphs1: list[str], paragraphs2: list[str]):
         matchedSections = []
-        
-        for document in document_list_handler.text_base:
-            paragraphs, equations = TexExtractor.separateTextAndEquationNodes(document)
-
-            for testedParagraph in testedParagraphs:
-                for paragraph in paragraphs:
-                    if AntiPlagarism.compare_hashes(testedParagraph, paragraph):
-                        matched = paragraph
-                        ratio = 100 * (len(paragraph) / textSymbolCount)
-                        matchedSections.append((matched, ratio))
-            
-            for testedEquation in testedEquations:
-                for equation in equations:
-                    if AntiPlagarism.compare_hashes(TexExtractor.nodeListToString(testedEquation), TexExtractor.nodeListToString(equation)):
-                        matched = equation
-                        ratio = 100 * (len(equation) / equationSymbolCount)
-                        matchedSections.append((matched, ratio))
-
-        list_of_matches = list(map(lambda x: x[0], matchedSections))
-        totalRatio = sum(map(lambda x: x[1], matchedSections))
-        # Nie wiem czym ma byc distance w tym przypadku
-        return list_of_matches, totalRatio
+        totalLength = len(TexExtractor.nodeListToString(paragraphs1))
+        ratio = 0
+        distance = totalLength
+        for testedParagraph in paragraphs1:
+            for referenceParagraph in paragraphs2:
+                if AntiPlagarism.compare_hashes(TexExtractor.nodeListToString(testedParagraph), TexExtractor.nodeListToString(referenceParagraph)):
+                    matched = testedParagraph
+                    matchedLength = len(matched)
+                    matchedSections.append(matched)
+                    ratio += matchedLength / totalLength
+                    distance -= matchedLength
+        return AntiPlagiatResult("compare_paragraph_hashes", distance, matchedSections, 100*ratio)
 
     @staticmethod
-    def compare_content_hashes(testedDocument: TexSoup):
+    def test_paragraph_hashes(tested_document: TexSoup, other_document: TexSoup):
+        tested_paragraphs, tested_equations = TexExtractor.separateTextAndEquationNodes(tested_document)
+        tested_document_contents = [*tested_paragraphs, *tested_equations]
 
-        testedParagraphs, testedEquations = TexExtractor.separateTextAndEquationNodes(testedDocument)
-        testedFullTextContent = TexExtractor.nodeListToString(testedParagraphs)
-        testedFullEquationsContent = TexExtractor.nodeListToString(testedEquations)
+        paragraphs, equations = TexExtractor.separateTextAndEquationNodes(other_document)
+        document_contents = [*paragraphs, *equations]
+        return AntiPlagarism.compare_paragraph_hashes(tested_document_contents, document_contents)
 
-        document_list_handler = DocumentListHandler()
-        document_list_handler.load_from_files(os.path.join(os.getcwd(), "tex_file_base"), lazy=True)
+    def compare_to_document_base(self, tested_document: TexSoup, comparison_function: Callable[[str, str], AntiPlagiatResult]):
+        return [comparison_function(tested_document, document) for document in self.text_base]
+        
+    @staticmethod
+    def test_full_content_hashes(tested_document: TexSoup, other_document: TexSoup):
 
-        #hash tests
-        for document in document_list_handler.text_base:
-            # porownaj po full content hash
-            paragraphs, equations = TexExtractor.separateTextAndEquationNodes(document)
-            fullTextContent = TexExtractor.nodeListToString(paragraphs)
-            fullEquationContent = TexExtractor.nodeListToString(equations)
-            matchedParagraphs = AntiPlagarism.compare_hashes(fullTextContent, testedFullTextContent)
-            matchedEquations = AntiPlagarism.compare_hashes(fullEquationContent, testedFullEquationsContent)
+        tested_paragraphs, tested_equations = TexExtractor.separateTextAndEquationNodes(tested_document)
+        tested_document_paragraphs = TexExtractor.nodeListToString(tested_paragraphs)
+        tested_document_equations = TexExtractor.nodeListToString(tested_equations)
 
-            assert len(fullTextContent) * len(fullEquationContent) != 0, "Co ty odjaniepawlasz??"
-            symbolCount = len(fullTextContent) + len(fullEquationContent)
+        paragraphs, equations = TexExtractor.separateTextAndEquationNodes(other_document)
+        document_paragraphs = TexExtractor.nodeListToString(paragraphs)
+        document_equations = TexExtractor.nodeListToString(equations)
 
-            if matchedParagraphs and matchedEquations:
-                return 0, document, 1 
+        matchedParagraphs = AntiPlagarism.compare_hashes(tested_document_paragraphs, document_paragraphs)
+        matchedEquations = AntiPlagarism.compare_hashes(tested_document_equations, document_equations)
 
-            if matchedParagraphs:
-                distance = len(fullTextContent)
-                matched = fullTextContent
-                ratio = 100 * (len(fullTextContent) / symbolCount)
-                return distance, matched, ratio
+        symbolCount = len(tested_document_paragraphs) + len(tested_document_equations)
 
-            if matchedEquations:
-                distance = len(fullEquationContent)
-                matched = fullEquationContent
-                ratio = 100 * (len(fullEquationContent) / symbolCount)
-                return distance, matched, ratio
+        if matchedParagraphs and matchedEquations:
+            return AntiPlagiatResult("content hashes", 0, [tested_document_paragraphs, tested_document_equations], 1)
+
+        if matchedParagraphs:
+            distance = symbolCount - len(tested_document_paragraphs)
+            matched = [tested_document_paragraphs]
+            ratio = 100 * (len(tested_document_paragraphs) / symbolCount)
+            return AntiPlagiatResult("content hashes", distance, matched, ratio)
+
+        if matchedEquations:
+            distance = symbolCount - len(tested_document_equations)
+            matched = [tested_document_equations]
+            ratio = 100 * (len(tested_document_equations) / symbolCount)
+            return AntiPlagiatResult("content hashes", distance, matched, ratio)
+
+        return AntiPlagiatResult("content hashes", symbolCount, [], 0)
 
     @staticmethod
     def compare_hashes(testedDocument: str, otherDocument: str):
@@ -109,10 +113,19 @@ class AntiPlagarism:
         matches = levenshtein_matching_blocks(levenshtein_editops(str1, str2), str1, str2)
         list_of_matches = [str1[x[0]:x[0]+x[2]] for x in matches]
         ratio = levenshtein_similarity_ratio(str1, str2) * 100
-        return distance, list_of_matches, ratio
+        return AntiPlagiatResult("lavenshtein", distance, list_of_matches, ratio)
         # simple levenshtein check, to be tweaked later
         # needs difference extrapolation about differences
         # distance is distance which we use to get a percentage
+    
+    @staticmethod
+    def test_lavenshtein_distance(tested_document: TexSoup, other_document: TexSoup):
+        tested_paragraphs, tested_equations = TexExtractor.separateTextAndEquationNodes(tested_document)
+        tested_document_contents = TexExtractor.nodeListToString([*tested_paragraphs, *tested_equations])
+        paragraphs, equations = TexExtractor.separateTextAndEquationNodes(other_document)
+        document_paragraphs = TexExtractor.nodeListToString([*paragraphs, *equations])
+        return AntiPlagarism.formula_check_levenshtein_simple(tested_document_contents, document_paragraphs)
+
     @staticmethod
     def formula_split_symbols(formula:str):
         long_name_symbols=["\Alpha","\\alpha","\Beta","\\beta","\\Gamma","\\gamma","\Delta","\\delta","\\neg","\#","\\frac"]
@@ -130,11 +143,12 @@ class AntiPlagarism:
                 else:
                     split_symbols+=[formula[i]]
             i+=1
-        return split_symbols 
+        return split_symbols
+
     @staticmethod
-    def formula_check_cosine(l1:list,l2:list): #list of symbols
-        vec1=Counter(l1)
-        vec2=Counter(l2)
+    def formula_check_cosine(l1: list[str], l2: list[str]): #list of symbols
+        vec1 = Counter(l1)
+        vec2 = Counter(l2)
         intersection = set(vec1.keys()) & set(vec2.keys())
         numerator = sum([vec1[x] * vec2[x] for x in intersection])
         sum1 = sum([vec1[x] ** 2 for x in list(vec1.keys())])
@@ -144,9 +158,11 @@ class AntiPlagarism:
             return 0.0
         else:
             return float(numerator) / denominator
+
         #can have a parameter to check by n symbol parts
+
     @staticmethod
-    def formula_check_jaccard(l1:list,l2:list):
+    def formula_check_jaccard(l1: list[str],l2: list[str]):
         intersection = len(list(set(l1).intersection(l2)))
         union = (len(set(l1)) + len(set(l2))) - intersection
         return float(intersection) / union
@@ -157,22 +173,32 @@ class AntiPlagarism:
         ...
     #def with_nlp(self,checked:str):
         ...
-if __name__=='__main__':
+
+#if __name__=='__main__':
     #distance,matches,ratio=AntiPlagarism.formula_check_levenshtein_simple('sitting','kitten')
     #print(f"Levenshtein distance for formulas:\nDistance: {distance}\nPercent: {ratio}%\nMatches: {matches}")
-    test = "jd"
-
+#    test = "jd"
 
 if __name__ == '__main__':
-    #distance, matches, ratio = AntiPlagarism.formula_check_levenshtein_simple('sitting', 'kitten')
-    #print(f"Levenshtein distance for formulas:\nDistance: {distance}\nPercent: {ratio}%\nMatches: {matches}")
-    formula="z y ^ { 2 } = 4 x ^ { 3 } - g _ { 2 } z ^ { 2 } x - g _ { 3 } z ^ { 3 }"
-    split_symbols1=AntiPlagarism.formula_split_symbols(formula)
-    print(split_symbols1)
-    formula="_ { g f } - i \\varepsilon \\frac { 1 } { 2 } \\int A ^ { 2 } d ^ { 4 } x"
-    split_symbols2=AntiPlagarism.formula_split_symbols(formula)
-    print(split_symbols2)
-    print(AntiPlagarism.formula_check_cosine(split_symbols1,split_symbols2))
+    tested_document = DocumentListHandler.initSoupFromTexFile("files_to_test/lagrange.tex")
+    document_base = DocumentListHandler.init_tex_document_base("tex_file_base")
+    antiPlagarism = AntiPlagarism(document_base)
+
+    results1 = antiPlagarism.compare_to_document_base(tested_document, AntiPlagarism.test_paragraph_hashes)
+    results2 = antiPlagarism.compare_to_document_base(tested_document, AntiPlagarism.test_full_content_hashes)
+    results3 = antiPlagarism.compare_to_document_base(tested_document, AntiPlagarism.test_lavenshtein_distance)
+    listdir = os.listdir(os.path.join("tex_file_base", "tex"))
+
+    results = list(zip(listdir, results1, results2, results3))
+    print("results for file files_to_test/lagrange.tex:S")
+    for test_document, r1, r2, r3 in results:
+        print(
+            f"{test_document}:", 
+            f"{r1.method}: distance: {r1.distance}, match_count: {len(r1.matched)}, ratio: {r1.ratio}",
+            f"{r2.method}: distance: {r2.distance}, match_count: {len(r2.matched)}, ratio: {r2.ratio}",
+            f"{r3.method}: distance: {r3.distance}, match_count: {len(r3.matched)}, ratio: {r3.ratio}",
+            "-----------------------------------------------------------------",
+            sep="\n")
 
 
 # TODO:

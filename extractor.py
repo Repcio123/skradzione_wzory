@@ -25,8 +25,10 @@ class TexExtractor:
             symbol.replace_with("") 
             symbols[index] = temp.contents
         paragraphs = TexExtractor.getContentsListFromNodeTree(document_body)
+        equations = ["".join([str(y) for y in x]) for x in TexExtractor.getContentsListFromNodeTree(symbols)[0]] # 0???
         clearedParagraphs = [y.strip() for y in "".join(paragraphs).split("\n\n") if y != ""]
-        return clearedParagraphs, symbols
+        clearedEquations = [y.strip() for y in equations if y != ""]
+        return clearedParagraphs, clearedEquations
 
     @staticmethod
     def nodeListToString(nodeList):
