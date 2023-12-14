@@ -1,5 +1,6 @@
 from Levenshtein import distance as levenshtein_distance, matching_blocks as levenshtein_matching_blocks, editops as levenshtein_editops, ratio as levenshtein_similarity_ratio
 import json
+from difflib import SequenceMatcher
 PARAGHRAPH_DEST = "tex_file_base/cached_paragraphs.json"
 MIN_LEN = 8
 MIN_DIST = 1
@@ -44,9 +45,23 @@ class StringComparison():
         same_str_blocks.append(
             StringComparison.similarCharSequences(str1, str2))
         return same_str_blocks, levenshtein_similarity_ratio(str1, str2)*100, match_pos
+    @staticmethod
+    def similarSentences(s1: str, s2: str):
+        seq = []
+        counter = 0
+        matcher = SequenceMatcher(None, s1, s2)
+        for op, i1, i2, j1, j2 in matcher.get_opcodes():
+            if op == 'equal':
+                counter += i2 - i1
+                if counter >= MIN_LEN:
+                    seq.append(s1[i1:i1+counter])
+            else:
+                counter = 0
+        return seq
+
 
 
 if __name__ == "__main__":
     f = open(PARAGHRAPH_DEST)
     data = json.load(f)
-    print(StringComparison.compareChars(data[0], data[9]))
+    print(StringComparison.similarSentences(data[0], data[9]))
