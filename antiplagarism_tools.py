@@ -13,17 +13,21 @@ import math
 class AntiPlagarism:
     word_threshold: int = 15
     char_sensitivity: int = 8  # one per this chars can be mismatched to give match
-    text_base: list = []
+
 
     def load_file_base(self):
         for file_name in os.listdir(os.getcwd()+"\\tex_file_base"):
             with open(os.getcwd()+"\\tex_file_base\\"+file_name, "r") as file:
                 self.text_base += [file.read()]
 
+    @staticmethod
     def by_chars(self, checked: str):
         ...
-
+    @staticmethod
     def by_words(self, checked: str):
+        ...
+    @staticmethod
+    def by_phrases(self, checked: str):
         ...
     def with_nlp(self, checked: str):
         ...
@@ -132,7 +136,9 @@ class AntiPlagarism:
             i+=1
         return split_symbols 
     @staticmethod
-    def formula_check_cosine(l1:list,l2:list): #list of symbols
+    def formula_check_cosine(str1:str,str2:str): #list of symbols
+        l1=AntiPlagarism.formula_split_symbols(str1)
+        l2=AntiPlagarism.formula_split_symbols(str2)
         vec1=Counter(l1)
         vec2=Counter(l2)
         intersection = set(vec1.keys()) & set(vec2.keys())
@@ -146,7 +152,9 @@ class AntiPlagarism:
             return float(numerator) / denominator
         #can have a parameter to check by n symbol parts
     @staticmethod
-    def formula_check_jaccard(l1:list,l2:list):
+    def formula_check_jaccard(str1:str,str2:str):
+        l1=AntiPlagarism.formula_split_symbols(str1)
+        l2=AntiPlagarism.formula_split_symbols(str2)
         intersection = len(list(set(l1).intersection(l2)))
         union = (len(set(l1)) + len(set(l2))) - intersection
         return float(intersection) / union
