@@ -1,0 +1,46 @@
+\title{Numerical Integration Methods: Theory and Applications}
+\author{Your Name}
+\date{\today}
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Numerical integration, also known as quadrature, is a fundamental technique in mathematics and scientific computing. In this paper, we explore the theory and applications of numerical integration methods, including the trapezoidal rule, Simpson's rule, and Gaussian quadrature. We discuss the accuracy, convergence, and practical implementation of these methods, along with real-world applications in areas such as physics and engineering.
+\end{abstract}
+
+\section{Introduction}
+
+Numerical integration, or quadrature, is the process of approximating the definite integral of a function using a finite number of evaluations. It plays a crucial role in mathematics, scientific computing, and various fields of science and engineering. In this paper, we will examine different numerical integration methods, their theoretical foundations, and practical applications.
+
+\section{Trapezoidal Rule}
+
+The trapezoidal rule is one of the simplest numerical integration methods. Given a function $f(x)$ over the interval $[a, b]$, the integral is approximated by dividing the interval into $n$ equal subintervals and using trapezoids to approximate the area under the curve. The formula for the trapezoidal rule is as follows:
+
+\begin{equation}
+\int_{a}^{b} f(x) dx \approx \frac{b - a}{2n} \left[f(a) + 2f(x_1) + 2f(x_2) + \ldots + 2f(x_{n-1}) + f(b)\right],
+\end{equation}
+
+where $x_i = a + i\Delta x$ and $\Delta x = (b - a)/n$.
+
+\section{Simpson's Rule}
+
+Simpson's rule is a more accurate numerical integration method that approximates the integral using quadratic interpolating polynomials. The formula for Simpson's rule is given by:
+
+\begin{equation}
+\int_{a}^{b} f(x) dx \approx \frac{b - a}{3n} \left[f(a) + 4f(x_1) + 2f(x_2) + 4f(x_3) + 2f(x_4) + \ldots + 2f(x_{n-2}) + 4f(x_{n-1}) + f(b)\right].
+\end{equation}
+
+Simpson's rule is often more accurate than the trapezoidal rule and requires fewer function evaluations for the same level of accuracy.
+
+\section{Types of Queueing Systems}
+
+Queueing systems can be categorized into different types based on their characteristics. Some of the common queueing system types include:
+
+\begin{itemize}
+\item Single-Server Queue: A single server serves incoming entities.
+\item Multi-Server Queue: Multiple servers serve incoming entities.
+\item M/M/1 Queue: A specific notation for a single-server queue with exponential arrival and service times.
+\item M/M/c Queue: A multi-server queue with exponential arrival and service times.
+\item M/G/1 Queue: A queue with exponential arrival times but general service time distribution.
+\end{itemize}

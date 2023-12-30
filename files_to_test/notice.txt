@@ -1,0 +1,4 @@
+lagrange, RW1, taylor_series - całkowicie to samo
+laplace_partial, main4_partial - artykuły bez kilku sekcji
+numeric_queue, modelling_PCA - artykuły będące połączeniem kilku artykułów
+test, AI, trains - całkowicie unikatowe artykuły
