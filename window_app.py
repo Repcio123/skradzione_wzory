@@ -1,6 +1,8 @@
 from tkinter import Tk,Canvas,Button, filedialog,Text,Checkbutton,Label,Scrollbar,NS,IntVar
 import shutil,os
 import antiplagarism_tools as at
+import document_list_handler as dlh
+
 FILEBASE_FOLDER_DIRECTORY="tex_file_base\\tex"
 TEST_FOLDER_DIRECTORY="files_to_test"
 def upload_file_to_base():
@@ -17,17 +19,42 @@ def select_file_to_check():
 
 def analyze():
     selected_methods=[]
-    if(char_method_var.get()==1):selected_methods+=[1]
+    if(char_method_var.get()==1):selected_methods+=[at.AntiPlagarism.test_by_chars]
     if(word_method_var.get()==1):selected_methods+=[2]
-    if(phrase_method_var.get()==1):selected_methods+=[3]
-    if(hash_method_var.get()==1):selected_methods+=[4]
-    if(formula_levenshtein_var.get()==1):selected_methods+=[5]
-    if(formula_cosine_var.get()==1):selected_methods+=[6]
-    if(formula_jaccard_var.get()==1):selected_methods+=[7]
+    if(phrase_method_var.get()==1):selected_methods+=[at.AntiPlagarism.test_paragraph_hashes]
+    if(hash_method_var.get()==1):selected_methods+=[at.AntiPlagarism.test_full_content_hashes]
+    if(formula_levenshtein_var.get()==1):selected_methods+=[at.AntiPlagarism.test_lavenshtein_distance]
+    if(formula_cosine_var.get()==1):selected_methods+=[at.AntiPlagarism.test_cosine_distance]
+    if(formula_jaccard_var.get()==1):selected_methods+=[at.AntiPlagarism.test_jaccard_distance]
     print("Selected methods: ", selected_methods)
+    
+    tested_document = dlh.DocumentListHandler.initSoupFromTexFile("files_to_test/lagrange.tex")
+    document_base = dlh.DocumentListHandler.init_tex_document_base("tex_file_base")
+    antiPlagarism = at.AntiPlagarism(document_base)
+
+    listdir = os.listdir(os.path.join("tex_file_base", "tex"))
+
+    results = [*zip(listdir, *(antiPlagarism.compare_to_document_base(tested_document, method) for method in selected_methods))]
+
+    for document, *result in results:
+        print(f"document: {document}")
+        for r in result:
+            print(f"{r.method}: distance: {r.distance}, match_count: {len(r.matched)}, ratio: {r.ratio}"),
+        
+    return
+    listdir = os.listdir(os.path.join("tex_file_base", "tex"))
+
+    results = list(zip(listdir, results1, results2, results3, results4))
+    print("results for file files_to_test/lagrange.tex:S")
+    for test_document, *result in results:
+        print(f"{test_document}:")
+        for r in result:
+            print(f"{r.method}: distance: {r.distance}, match_count: {len(r.matched)}, ratio: {r.ratio}"),
+
     #execute the methods on selected file
     #print out results
     #modify html report
+
 window=Tk()
 char_method_var=IntVar()
 word_method_var=IntVar()

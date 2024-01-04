@@ -17,11 +17,14 @@ class DocumentListHandler:
             except:
                 raise Exception(f"failed to parse latex")
 
-    def load_from_files(self, dir, lazy = True):
+    @staticmethod
+    def init_tex_document_base(dir, lazy = True):
+        result = []
         for file_name in os.listdir(os.path.join(dir, "tex")):
             if file_name.split(".")[-1] == "tex":
                 file_path = os.path.join(dir, "tex", file_name)
-                self.text_base.append(DocumentListHandler.initSoupFromTexFile(file_path))
+                result.append(DocumentListHandler.initSoupFromTexFile(file_path))
+        return result
 
 TEX_FOLDER_NAME = "tex_file_base"
 
