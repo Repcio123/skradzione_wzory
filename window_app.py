@@ -1,4 +1,5 @@
 from tkinter import Tk,Canvas,Button, filedialog,Text,Checkbutton,Label,Scrollbar,NS,IntVar
+from customtkinter import CTk,CTkButton,CTkLabel,CTkTextbox,CTkSwitch,CTkFrame,set_appearance_mode
 import shutil,os
 import antiplagarism_tools as at
 import document_list_handler as dlh
@@ -15,12 +16,12 @@ def select_file_to_check():
         ('All files', '*.*')
     )
     path=filedialog.askopenfilename(filetypes=filetypes,initialdir=os.getcwd()+"\\"+TEST_FOLDER_DIRECTORY)
-    filePath_label.config(text=path.split("/")[-1])
+    article_path=path
+    filePath_selected_label.configure(text="Selected Article: \n"+path.split("/")[-1])
 
 def analyze():
     selected_methods=[]
     if(char_method_var.get()==1):selected_methods+=[at.AntiPlagarism.test_by_chars]
-    if(word_method_var.get()==1):selected_methods+=[2]
     if(phrase_method_var.get()==1):selected_methods+=[at.AntiPlagarism.test_paragraph_hashes]
     if(hash_method_var.get()==1):selected_methods+=[at.AntiPlagarism.test_full_content_hashes]
     if(formula_levenshtein_var.get()==1):selected_methods+=[at.AntiPlagarism.test_lavenshtein_distance]
@@ -40,22 +41,16 @@ def analyze():
         print(f"document: {document}")
         for r in result:
             print(f"{r.method}: distance: {r.distance}, match_count: {len(r.matched)}, ratio: {r.ratio}"),
-        
-    return
-    listdir = os.listdir(os.path.join("tex_file_base", "tex"))
+    
 
-    results = list(zip(listdir, results1, results2, results3, results4))
-    print("results for file files_to_test/lagrange.tex:S")
-    for test_document, *result in results:
-        print(f"{test_document}:")
-        for r in result:
-            print(f"{r.method}: distance: {r.distance}, match_count: {len(r.matched)}, ratio: {r.ratio}"),
 
     #execute the methods on selected file
     #print out results
     #modify html report
 
-window=Tk()
+window=CTk()
+article_path=""
+set_appearance_mode('dark')
 char_method_var=IntVar()
 word_method_var=IntVar()
 phrase_method_var=IntVar()
@@ -65,34 +60,34 @@ formula_levenshtein_var=IntVar()
 formula_cosine_var=IntVar()
 formula_jaccard_var=IntVar()
 window.title("LaTeX AntiPlagarism App")
-upload_button=Button(text="Upload to Base", command=upload_file_to_base)
+left_mid_padding=CTkFrame(window,width=20,fg_color="transparent").grid(column=1,row=1,rowspan=6)
+upload_button=CTkButton(window,text="Upload to Base", command=upload_file_to_base,corner_radius=32)
 upload_button.grid(column=0,row=1)
-check_file_button=Button(text="Pick Article\n to Check",command=select_file_to_check)
-check_file_button.grid(column=0,row=2)
-paragraph_method_label=Label(text="Paragraphs")
-paragraph_method_label.grid(column=2,row=0)
-char_method_checkbox=Checkbutton(text="By chars",variable=char_method_var)
+check_file_button=CTkButton(window,text="Pick Article\n to Check",command=select_file_to_check,corner_radius=64)
+check_file_button.grid(column=0,row=3)
+filePath_selected_label=CTkLabel(window,text="Selected Article:")
+filePath_selected_label.grid(column=0,row=4)
+analyze_button=CTkButton(window,text="Analyze",command=analyze,corner_radius=32)
+analyze_button.grid(column=0,row=6)
+select_methods_label=CTkLabel(window,text="Select methods")
+select_methods_label.grid(column=2,row=0)
+char_method_checkbox=CTkSwitch(window,text="By chars",variable=char_method_var)
 char_method_checkbox.grid(column=2,row=1)
-word_method_checkbox=Checkbutton(text="By words",variable=word_method_var)
-word_method_checkbox.grid(column=2,row=2)
-phrase_method_checkbox=Checkbutton(text="By phrases",variable=phrase_method_var)
-phrase_method_checkbox.grid(column=2,row=3)
-hash_method_checkbox=Checkbutton(text="By hashes",variable=hash_method_var)
-hash_method_checkbox.grid(column=2,row=4)
-formula_method_label=Label(text="Formulas")
-formula_method_label.grid(column=2,row=5)
-levenshtein_formula_method_checkbox=Checkbutton(text="By Levenshtein",variable=formula_levenshtein_var)
-levenshtein_formula_method_checkbox.grid(column=2,row=6)
-cosine_formula_method_checkbox=Checkbutton(text="By Cosine",variable=formula_cosine_var)
-cosine_formula_method_checkbox.grid(column=2,row=7)
-jaccard_formula_method_checkbox=Checkbutton(text="By Jaccard",variable=formula_jaccard_var)
-jaccard_formula_method_checkbox.grid(column=2,row=8)
-filePath_label=Label()
-filePath_label.grid(column=3,row=1)
-analyze_button=Button(text="Analyze",command=analyze)
-analyze_button.grid(column=3,row=3)
-result_box=Label(text="Results:")
-result_box.grid(column=4,row=0, rowspan=8)
+phrase_method_checkbox=CTkSwitch(window,text="By phrases",variable=phrase_method_var)
+phrase_method_checkbox.grid(column=2,row=2)
+hash_method_checkbox=CTkSwitch(window,text="By hashes",variable=hash_method_var)
+hash_method_checkbox.grid(column=2,row=3)
+levenshtein_formula_method_checkbox=CTkSwitch(window,text="By Levenshtein",variable=formula_levenshtein_var)
+levenshtein_formula_method_checkbox.grid(column=2,row=4)
+cosine_formula_method_checkbox=CTkSwitch(window,text="By Cosine",variable=formula_cosine_var)
+cosine_formula_method_checkbox.grid(column=2,row=5)
+jaccard_formula_method_checkbox=CTkSwitch(window,text="By Jaccard",variable=formula_jaccard_var)
+jaccard_formula_method_checkbox.grid(column=2,row=6)
+right_mid_padding=CTkFrame(window,width=20,fg_color="transparent").grid(column=3,row=1,rowspan=6)
+result_label=CTkLabel(window,text="Results:")
+result_label.grid(column=4,row=0)
+result_box=CTkTextbox(window)
+result_box.grid(column=4,row=2,rowspan=6)
 window.mainloop()
 
-#use filePath_label in analyze()
+# make frames for left, middle, right panel
