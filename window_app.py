@@ -1,4 +1,4 @@
-from tkinter import Tk,Canvas,Button, filedialog,Text,Checkbutton,Label,Scrollbar,NS,IntVar
+from tkinter import filedialog,NS,IntVar,StringVar
 from customtkinter import CTk,CTkButton,CTkLabel,CTkTextbox,CTkSwitch,CTkFrame,set_appearance_mode
 import shutil,os
 import antiplagarism_tools as at
@@ -16,8 +16,7 @@ def select_file_to_check():
         ('All files', '*.*')
     )
     path=filedialog.askopenfilename(filetypes=filetypes,initialdir=os.getcwd()+"\\"+TEST_FOLDER_DIRECTORY)
-    article_path=path
-    filePath_selected_label.configure(text="Selected Article: \n"+path.split("/")[-1])
+    path_variable.set("Selected Article: \n"+path.split("/")[-1])
 
 def analyze():
     selected_methods=[]
@@ -29,7 +28,8 @@ def analyze():
     if(formula_jaccard_var.get()==1):selected_methods+=[at.AntiPlagarism.test_jaccard_distance]
     print("Selected methods: ", selected_methods)
     
-    tested_document = dlh.DocumentListHandler.initSoupFromTexFile("files_to_test/lagrange.tex")
+    article_name=path_variable.get().split("\n")[1]
+    tested_document = dlh.DocumentListHandler.initSoupFromTexFile("files_to_test/"+article_name)
     document_base = dlh.DocumentListHandler.init_tex_document_base("tex_file_base")
     antiPlagarism = at.AntiPlagarism(document_base)
 
@@ -49,8 +49,9 @@ def analyze():
     #modify html report
 
 window=CTk()
-article_path=""
 set_appearance_mode('dark')
+path_variable=StringVar()
+path_variable.set("Selected Article:")
 char_method_var=IntVar()
 word_method_var=IntVar()
 phrase_method_var=IntVar()
@@ -65,7 +66,7 @@ upload_button=CTkButton(window,text="Upload to Base", command=upload_file_to_bas
 upload_button.grid(column=0,row=1)
 check_file_button=CTkButton(window,text="Pick Article\n to Check",command=select_file_to_check,corner_radius=64)
 check_file_button.grid(column=0,row=3)
-filePath_selected_label=CTkLabel(window,text="Selected Article:")
+filePath_selected_label=CTkLabel(window,textvariable=path_variable)
 filePath_selected_label.grid(column=0,row=4)
 analyze_button=CTkButton(window,text="Analyze",command=analyze,corner_radius=32)
 analyze_button.grid(column=0,row=6)
