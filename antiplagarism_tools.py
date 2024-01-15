@@ -230,7 +230,7 @@ class AntiPlagarism:
             return 0.0
         else:
             return float(numerator) / denominator
-
+    
         #can have a parameter to check by n symbol parts
     
     @staticmethod

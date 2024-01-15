@@ -91,4 +91,8 @@ filePath_label=Label()
 filePath_label.grid(column=3,row=1)
 analyze_button=Button(text="Analyze",command=analyze)
 analyze_button.grid(column=3,row=3)
+result_box=Label(text="Results:")
+result_box.grid(column=4,row=0, rowspan=8)
 window.mainloop()
+
+#use filePath_label in analyze()
