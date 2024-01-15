@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta}
+
+\title{Podstawy Teorii Grafów: Definicje i Własności}
+\author{Twoje Imię i Nazwisko}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Wprowadzenie}
+Teoria grafów to dziedzina matematyki zajmująca się badaniem struktury i właściwości grafów. Grafy są abstrakcyjnym modelem reprezentującym zbiór wierzchołków, połączonych krawędziami. W tym artykule omówimy podstawowe definicje związane z grafami oraz przedstawimy kilka kluczowych własności.
+
+\section{Definicje Podstawowe}
+\begin{definition}
+Graf $G$ składa się z dwóch zbiorów: zbioru wierzchołków $V(G)$ oraz zbioru krawędzi $E(G)$. Krawędź to para wierzchołków, która je łączy.
+\end{definition}
+
+\begin{definition}
+Graf $G$ jest skierowany, jeśli każda krawędź ma określony kierunek. W przeciwnym razie nazywamy go grafem nieskierowanym.
+\end{definition}
+
+\begin{definition}
+Stopień wierzchołka to liczba krawędzi incydentnych z danym wierzchołkiem. W grafie nieskierowanym, stopień wierzchołka to liczba krawędzi z nim incydentnych, a w grafie skierowanym, suma liczby krawędzi wchodzących i wychodzących.
+\end{definition}
+
+\section{Rodzaje Grafów}
+\begin{definition}
+Graf pełny, oznaczany jako $K_n$, to graf nieskierowany, w którym każde dwa różne wierzchołki są połączone krawędzią.
+\end{definition}
+
+\begin{definition}
+Drzewo to spójny graf nieskierowany bez cykli.
+\end{definition}
+
+\section{Własności Grafów}
+\begin{theorem}
+W każdym grafie, suma stopni wszystkich wierzchołków jest równa dwukrotności liczby krawędzi.
+\end{theorem}
+
+\begin{proof}
+Suma stopni wierzchołków to dwukrotność liczby krawędzi, ponieważ każda krawędź przyczynia się do stopnia dwóch wierzchołków.
+\end{proof}
+
+\begin{theorem}
+W grafie skierowanym, suma stopni wierzchołków wchodzących jest równa sumie stopni wierzchołków wychodzących.
+\end{theorem}
+
+\begin{proof}
+W grafie skierowanym każda krawędź przyczynia się do stopnia wierzchołka wchodzącego i wychodzącego, co dowodzi równości sumy stopni wierzchołków wchodzących i wychodzących.
+\end{proof}
+
+\section{Podsumowanie}
+Teoria grafów jest niezwykle ważna w matematyce i informatyce. W artykule tym omówiliśmy podstawowe definicje grafów, rodzaje grafów oraz przedstawiliśmy dwie kluczowe własności dotyczące stopni wierzchołków. Wiedza ta znajduje zastosowanie w rozmaitych dziedzinach, w tym w sieciach komputerowych, planowaniu tras, czy algorytmach grafowych.
+
+\end{document}

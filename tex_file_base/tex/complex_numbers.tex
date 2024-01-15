@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{a4paper, margin=1in}
+
+\title{Complex Numbers: A Comprehensive Study}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+Complex numbers extend the real number system, introducing the imaginary unit $i$ and allowing for a broader mathematical framework. They have applications in various fields, including physics, engineering, and signal processing.
+
+\section{Basic Definitions}
+
+\subsection{Imaginary Unit}
+
+The imaginary unit $i$ is defined as $i^2 = -1$. A complex number $z$ is written as $z = a + bi$, where $a$ and $b$ are real numbers.
+
+\subsection{Basic Operations}
+
+\begin{align}
+    \text{Addition:} \quad &(a + bi) + (c + di) = (a + c) + (b + d)i \\
+    \text{Subtraction:} \quad &(a + bi) - (c + di) = (a - c) + (b - d)i \\
+    \text{Multiplication:} \quad &(a + bi) \cdot (c + di) = (ac - bd) + (ad + bc)i \\
+    \text{Conjugate:} \quad &\overline{a + bi} = a - bi \\
+    \text{Modulus:} \quad &|a + bi| = \sqrt{a^2 + b^2}
+\end{align}
+
+\section{Polar Form}
+
+A complex number $z = a + bi$ can be expressed in polar form as $z = r(\cos \theta + i \sin \theta)$, where $r$ is the modulus and $\theta$ is the argument.
+
+\subsection{Euler's Formula}
+
+Euler's formula relates the exponential function to trigonometric functions:
+
+\begin{equation}
+    e^{i\theta} = \cos \theta + i \sin \theta
+\end{equation}
+
+\section{Complex Functions}
+
+\subsection{Complex Exponential Function}
+
+The complex exponential function is defined as $e^z = e^{a+bi} = e^a(\cos b + i \sin b)$.
+
+\subsection{Complex Logarithm}
+
+The complex logarithm is defined as $\log z = \log|z| + i \arg(z)$, where $\arg(z)$ is the principal argument of $z$.
+
+\section{De Moivre's Theorem}
+
+De Moivre's theorem states that for any real number $n$ and any complex number $z = r(\cos \theta + i \sin \theta)$:
+
+\begin{equation}
+    (r(\cos \theta + i \sin \theta))^n = r^n (\cos (n\theta) + i \sin (n\theta))
+\end{equation}
+
+\section{Roots of Complex Numbers}
+
+The $n$-th roots of a complex number $z$ can be found using De Moivre's theorem:
+
+\begin{equation}
+    \sqrt[n]{z} = \sqrt[n]{r} \left(\cos \left(\frac{\theta + 2\pi k}{n}\right) + i \sin \left(\frac{\theta + 2\pi k}{n}\right)\right)
+\end{equation}
+
+where $k = 0, 1, 2, \ldots, n-1$.
+
+\section{Complex Analysis}
+
+\subsection{Cauchy-Riemann Equations}
+
+For a complex function $f(z) = u(x, y) + iv(x, y)$ to be differentiable at a point, the Cauchy-Riemann equations must be satisfied:
+
+\begin{align}
+    \frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y} \\
+    \frac{\partial u}{\partial y} &= -\frac{\partial v}{\partial x}
+\end{align}
+
+\subsection{Contour Integration}
+
+Contour integration is a powerful technique in complex analysis. The residue theorem relates contour integrals to the residues of a function within a closed curve.
+
+\section{Conclusion}
+
+Complex numbers provide a valuable extension to the real number system, with applications ranging from mathematical analysis to engineering. The presented formulas offer insight into the fundamental properties and operations involving complex numbers.
+
+\end{document}

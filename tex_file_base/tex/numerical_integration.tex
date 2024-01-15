@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{a4paper, margin=1in}
+
+\title{Numerical Integration: Methods and Applications}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+Numerical integration is a fundamental technique in computational mathematics, employed to approximate definite integrals of functions that may be difficult or impossible to solve analytically. This field plays a crucial role in various scientific and engineering applications.
+
+\section{Basic Concepts}
+
+\subsection{Trapezoidal Rule}
+
+The trapezoidal rule is a simple method to approximate the definite integral of a function $f(x)$ over an interval $[a, b]$:
+
+\begin{equation}
+    \int_{a}^{b} f(x) \,dx \approx \frac{b - a}{2} \left[f(a) + f(b)\right]
+\end{equation}
+
+\subsection{Simpson's Rule}
+
+Simpson's rule provides a more accurate approximation using quadratic polynomials:
+
+\begin{equation}
+    \int_{a}^{b} f(x) \,dx \approx \frac{b - a}{6} \left[f(a) + 4f\left(\frac{a+b}{2}\right) + f(b)\right]
+\end{equation}
+
+\subsection{Midpoint Rule}
+
+The midpoint rule uses the midpoint of each subinterval for approximation:
+
+\begin{equation}
+    \int_{a}^{b} f(x) \,dx \approx h \sum_{i=1}^{n} f\left(a + \frac{h}{2} + ih\right)
+\end{equation}
+
+where $h = \frac{b - a}{n}$ and $n$ is the number of subintervals.
+
+\section{Composite Numerical Integration}
+
+To improve accuracy, composite methods combine multiple applications of basic rules over smaller subintervals. The composite trapezoidal rule, composite Simpson's rule, and composite midpoint rule are commonly used.
+
+\subsection{Composite Trapezoidal Rule}
+
+\begin{equation}
+    \int_{a}^{b} f(x) \,dx \approx \frac{h}{2} \left[f(a) + 2\sum_{i=1}^{n-1} f(a + ih) + f(b)\right]
+\end{equation}
+
+\subsection{Composite Simpson's Rule}
+
+\begin{equation}
+    \int_{a}^{b} f(x) \,dx \approx \frac{h}{3} \left[f(a) + 4\sum_{i=1}^{n-1} f\left(a + \frac{2ih}{2}\right) + 2\sum_{i=1}^{n} f(a + ih) + f(b)\right]
+\end{equation}
+
+\subsection{Composite Midpoint Rule}
+
+\begin{equation}
+    \int_{a}^{b} f(x) \,dx \approx h \sum_{j=1}^{m} \sum_{i=1}^{n} f\left(a + \frac{h}{2} + (i-1)h, c_j\right)
+\end{equation}
+
+where $h = \frac{b - a}{n}$, $n$ is the number of subintervals, and $c_j$ is the midpoint of each subinterval.
+
+\section{Error Analysis}
+
+The error in numerical integration methods can be estimated using techniques such as Richardson extrapolation and asymptotic error expansions.
+
+\subsection{Richardson Extrapolation}
+
+Richardson extrapolation is a technique to improve the accuracy of numerical methods by combining multiple approximations with different step sizes.
+
+\begin{equation}
+    I_h = I + c_1h^p + c_2h^{2p} + \ldots
+\end{equation}
+
+where $I_h$ is the numerical approximation with step size $h$, and $p$ is the order of convergence.
+
+\section{Adaptive Quadrature}
+
+Adaptive quadrature methods dynamically adjust the step size based on the function's behavior to achieve accurate results efficiently.
+
+\subsection{Adaptive Simpson's Rule}
+
+Adaptive Simpson's rule adapts the step size based on the difference between the Simpson's rule approximation and the composite approximation with smaller subintervals.
+
+\section{Conclusion}
+
+Numerical integration methods play a crucial role in approximating definite integrals, allowing for the efficient evaluation of mathematical expressions in various scientific and engineering applications. The presented formulas and techniques provide a foundation for understanding and implementing numerical integration algorithms.
+
+\end{document}

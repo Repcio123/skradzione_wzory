@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{Całkowanie Numeryczne: Metody, Błędy i Zastosowania}
+\author{Twoje Imię i Nazwisko}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Wprowadzenie}
+Całkowanie numeryczne to gałąź analizy numerycznej zajmująca się przybliżonym obliczaniem wartości całek definowanych na funkcjach. Jest niezwykle ważne w wielu dziedzinach matematyki, fizyki, inżynierii i nauk przyrodniczych. W tym artykule omówimy podstawowe metody całkowania numerycznego, analizę błędów oraz zastosowania praktyczne.
+
+\section{Definicje Podstawowe}
+\begin{definition}
+Rozważmy funkcję $f(x)$ określoną na przedziale $[a, b]$. Całkowanie numeryczne polega na przybliżeniu wartości całki $\int_{a}^{b} f(x) \,dx$ za pomocą skończonej liczby operacji arytmetycznych.
+\end{definition}
+
+\section{Metody Całkowania Numerycznego}
+\begin{enumerate}
+  \item \textbf{Metoda Prostokątów:} Polega na przybliżeniu obszaru pod krzywą za pomocą prostokątów i sumowaniu ich pól.
+  
+  \item \textbf{Metoda Trapezów:} Wykorzystuje trapezy jako przybliżenie obszaru pod krzywą, co daje dokładniejsze wyniki niż metoda prostokątów.
+  
+  \item \textbf{Metoda Simpsona:} Stosuje parabolę jako przybliżenie obszaru, co jest bardziej dokładne niż metoda trapezów, szczególnie dla funkcji gładkich.
+  
+  \item \textbf{Kwadratura Gaussa:} Wykorzystuje specjalne wagi i punkty, aby uzyskać jeszcze dokładniejsze przybliżenia całek.
+\end{enumerate}
+
+\section{Analiza Błędów}
+\begin{theorem}
+Błąd całkowania numerycznego zależy od rodzaju metody oraz liczby podprzedziałów użytych do przybliżenia całki.
+\end{theorem}
+
+\begin{theorem}
+Błędy zaokrągleń mogą wpływać na dokładność wyników całkowania numerycznego, zwłaszcza dla skomplikowanych funkcji.
+\end{theorem}
+
+\section{Zastosowania Całkowania Numerycznego}
+\begin{itemize}
+  \item \textbf{Analiza numeryczna funkcji:} Całkowanie numeryczne jest szeroko stosowane w analizie funkcji, zwłaszcza gdy brak jest analitycznych rozwiązań całek.
+  
+  \item \textbf{Rozwiązywanie równań różniczkowych:} W wielu numerycznych metodach rozwiązywania równań różniczkowych, całkowanie numeryczne odgrywa kluczową rolę.
+  
+  \item \textbf{Symulacje numeryczne:} W dziedzinie nauk przyrodniczych, fizyki czy inżynierii, całkowanie numeryczne jest niezbędne do przeprowadzania dokładnych symulacji numerycznych.
+\end{itemize}
+
+\section{Podsumowanie}
+Całkowanie numeryczne to istotna dziedzina analizy numerycznej, znajdująca zastosowanie w różnych dziedzinach matematyki i nauk przyrodniczych. W artykule tym omówiliśmy podstawowe metody całkowania numerycznego, analizę błędów oraz praktyczne zastosowania tej techniki.
+
+\end{document}
