@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{Równanie Newtona: Metody Iteracyjne i Zastosowania}
+\author{Twoje Imię i Nazwisko}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Wprowadzenie}
+Równanie Newtona to jedno z fundamentalnych równań matematycznych, używane do znajdowania miejsc zerowych funkcji. W tym artykule omówimy metody iteracyjne rozwiązywania równania Newtona, jego własności oraz zastosowania w analizie numerycznej.
+
+\section{Równanie Newtona}
+\begin{definition}
+Równanie Newtona dla funkcji rzeczywistej $f(x)$ ma postać:
+\[
+f(x) = 0
+\]
+Metoda Newtona polega na iteracyjnym przybliżaniu miejsc zerowych tej funkcji.
+\end{definition}
+
+\section{Metoda Iteracyjna Newtona}
+\begin{theorem}
+Metoda Newtona zakłada iteracyjne stosowanie wzoru:
+\[
+x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
+\]
+gdzie $f'(x_n)$ to pochodna funkcji $f(x)$ w punkcie $x_n$.
+\end{theorem}
+
+\section{Własności i Warunki Zbieżności}
+\begin{itemize}
+  \item \textbf{Warunek Zbieżności:} Metoda Newtona zwykle zbiega szybko do rozwiązania, jeśli startujemy z dostatecznie bliskiego punktu.
+  
+  \item \textbf{Złożoność Obliczeniowa:} Obliczenia wymagają obliczenia pochodnych, co może być czasochłonne.
+  
+  \item \textbf{Stabilność Numeryczna:} Metoda może być niestabilna w przypadku, gdy jest stosowana w okolicach ekstremalnych.
+\end{itemize}
+
+\section{Zastosowania}
+\begin{itemize}
+  \item \textbf{Analiza Numeryczna:} Metoda Newtona jest powszechnie używana do rozwiązywania równań nieliniowych w analizie numerycznej.
+  
+  \item \textbf{Optymalizacja:} Równanie Newtona jest wykorzystywane w algorytmach optymalizacji do znajdowania punktów minimalnych i maksymalnych funkcji.
+  
+  \item \textbf{Fizyka i Inżynieria:} W różnych dziedzinach nauki i technologii, równanie Newtona jest stosowane w rozwiązywaniu problemów matematycznych opisujących zjawiska fizyczne.
+\end{itemize}
+
+\section{Podsumowanie}
+Równanie Newtona i metoda iteracyjna, której używamy do jego rozwiązywania, są kluczowe w analizie numerycznej i optymalizacji. W artykule tym omówiliśmy podstawowe definicje, metody iteracyjne, własności oraz zastosowania równania Newtona w różnych dziedzinach matematyki i nauki.
+
+\end{document}

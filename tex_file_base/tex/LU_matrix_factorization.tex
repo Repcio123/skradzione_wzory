@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{Faktoryzacja LU Macierzy: Teoria, Algorytmy i Zastosowania}
+\author{Twoje Imię i Nazwisko}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Wprowadzenie}
+Faktoryzacja LU (Lower-Upper) macierzy to jedna z fundamentalnych operacji w algebrze liniowej. Polega na przedstawieniu danej macierzy jako iloczyn macierzy dolnotrójkątnej (Lower) i górnotrójkątnej (Upper). W tym artykule omówimy teorię faktoryzacji LU, przedstawimy algorytmy jej obliczania oraz zastosowania praktyczne.
+
+\section{Definicje Podstawowe}
+\begin{definition}
+Niech $A$ będzie macierzą wymiaru $n \times n$. Faktoryzacja LU polega na znalezieniu dwóch macierzy $L$ (macierz dolnotrójkątna) i $U$ (macierz górnotrójkątna) takich, że $A = LU$.
+\end{definition}
+
+\section{Algorytmy Faktoryzacji LU}
+\begin{enumerate}
+  \item \textbf{Metoda Eliminacji Gaussa:} Klasyczna metoda polegająca na eliminacji zmiennych w układzie równań, co prowadzi do uzyskania macierzy w postaci faktoryzacji LU.
+  
+  \item \textbf{Metoda Doolittle'a:} Algorytm, który bezpośrednio oblicza macierze $L$ i $U$ na podstawie eliminacji Gaussa.
+  
+  \item \textbf{Metoda Crouta:} Inna wersja bezpośredniego algorytmu faktoryzacji LU, w której różnice między $L$ i $U$ są minimalizowane.
+\end{enumerate}
+
+\section{Własności Faktoryzacji LU}
+\begin{theorem}
+Faktoryzacja LU macierzy istnieje dla macierzy kwadratowej $A$ o pełnym rzędzie (wszystkie minory główne są nieosobliwe).
+\end{theorem}
+
+\begin{theorem}
+Faktoryzacja LU macierzy jest niejednoznaczna, jednak dla pewnych warunków macierze $L$ i $U$ mogą być jednoznacznie określone.
+\end{theorem}
+
+\section{Zastosowania Faktoryzacji LU}
+\begin{itemize}
+  \item \textbf{Rozwiązywanie układów równań:} Faktoryzacja LU jest często stosowana do efektywnego rozwiązywania układów równań liniowych.
+  
+  \item \textbf{Rozkład QR:} Faktoryzacja LU jest używana w algorytmach rozkładu QR, stosowanych m.in. w analizie regresji.
+  
+  \item \textbf{Rozwiązywanie macierzy odwrotnej:} W przypadkach, gdy macierz $A$ jest odwracalna, faktoryzacja LU może być używana do efektywnego obliczania jej odwrotności.
+\end{itemize}
+
+\section{Podsumowanie}
+Faktoryzacja LU macierzy to ważne narzędzie w algebrze liniowej, znajdujące zastosowanie w różnych dziedzinach matematyki i inżynierii. W artykule tym omówiliśmy teorię faktoryzacji LU, przedstawiliśmy algorytmy obliczania, a także zastosowania praktyczne tej operacji, takie jak rozwiązywanie układów równań czy analiza regresji.
+
+\end{document}

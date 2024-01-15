@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{Mnożenie Macierzy: Własności, Algorytmy i Zastosowania}
+\author{Twoje Imię i Nazwisko}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Wprowadzenie}
+Mnożenie macierzy to kluczowe zagadnienie w algebrze liniowej, które znajduje zastosowanie w wielu dziedzinach matematyki, fizyki, informatyki i inżynierii. W tym artykule omówimy podstawowe definicje związane z mnożeniem macierzy, przedstawimy algorytmy obliczeniowe oraz zastosowania praktyczne.
+
+\section{Definicje Podstawowe}
+\begin{definition}
+Niech $A$ będzie macierzą o wymiarach $m \times n$, a $B$ macierzą o wymiarach $n \times p$. Mnożenie macierzy $A$ i $B$ definiuje się jako macierz $C$ o wymiarach $m \times p$, gdzie każdy element $c_{ij}$ jest sumą iloczynów elementów z $i$-tego wiersza macierzy $A$ i $j$-tej kolumny macierzy $B$:
+\[
+c_{ij} = \sum_{k=1}^{n} a_{ik} \cdot b_{kj}
+\]
+\end{definition}
+
+\section{Algorytmy Mnożenia Macierzy}
+\begin{enumerate}
+  \item \textbf{Algorytm Klasyczny:} Standardowy algorytm mnożenia macierzy oparty na definicji. Dla każdego elementu macierzy wynikowej obliczamy sumę iloczynów odpowiednich elementów macierzy wejściowych.
+  
+  \item \textbf{Algorytm Strassen'a:} Bardziej efektywny algorytm mnożenia macierzy oparty na dzieleniu macierzy na mniejsze podmacierze. Wykorzystuje tylko 7 mnożeń zamiast standardowych 8 w algorytmie klasycznym.
+  
+  \item \textbf{Algorytm Coppersmitha-Winograda:} Algorytm optymalizujący ilość operacji mnożenia w porównaniu do standardowego algorytmu.
+\end{enumerate}
+
+\section{Własności Mnożenia Macierzy}
+\begin{theorem}
+Mnożenie macierzy jest łączne, ale nie jest przemienne. Dla macierzy $A$, $B$ i $C$ o odpowiednich wymiarach, $(A \cdot B) \cdot C = A \cdot (B \cdot C)$, ale w ogólności $A \cdot B \neq B \cdot A$.
+\end{theorem}
+
+\begin{theorem}
+Jeśli $A$ i $B$ są macierzami kwadratowymi tego samego wymiaru, to mnożenie macierzy jest rozdzielne względem dodawania: $A \cdot (B + C) = A \cdot B + A \cdot C$.
+\end{theorem}
+
+\section{Zastosowania Mnożenia Macierzy}
+\begin{itemize}
+  \item \textbf{Grafika komputerowa:} Transformacje grafiki 2D i 3D są często wykonywane za pomocą mnożenia macierzy.
+  
+  \item \textbf{Informatyka:} Algorytmy bazujące na mnożeniu macierzy są stosowane w analizie danych, sztucznej inteligencji, uczeniu maszynowym itp.
+  
+  \item \textbf{Fizyka i Inżynieria:} Mnożenie macierzy jest używane do rozwiązywania równań różniczkowych, analizy struktur, sterowania systemami dynamicznymi itp.
+\end{itemize}
+
+\section{Podsumowanie}
+Mnożenie macierzy to fundamentalne zagadnienie matematyczne, które znalazło zastosowanie w wielu dziedzinach nauki i technologii. W artykule tym omówiliśmy podstawowe definicje, przedstawiliśmy algorytmy obliczeniowe, omówiliśmy własności oraz zastosowania praktyczne tego kluczowego operacji algebry liniowej.
+
+\end{document}
