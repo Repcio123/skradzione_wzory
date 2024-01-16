@@ -1,0 +1,72 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\title{An Overview of Inferential Statistics}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+Inferential statistics is a branch of statistics that involves drawing conclusions about a population based on a sample of data. It allows us to make predictions, test hypotheses, and generalize findings from a subset to a larger group. In this article, we will explore various concepts in inferential statistics along with the mathematical formulas that underpin these concepts.
+
+\section{Sampling Distributions}
+
+\subsection{Mean and Standard Deviation of a Sample}
+For a sample of $n$ observations:
+\[
+\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+\]
+\[
+s = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}}
+\]
+
+\subsection{Central Limit Theorem}
+As the sample size increases, the distribution of the sample mean approaches a normal distribution:
+\[
+\bar{x} \sim N\left(\mu, \frac{\sigma^2}{n}\right)
+\]
+
+\section{Confidence Intervals}
+
+\subsection{Confidence Interval for the Mean}
+For a confidence level $(1 - \alpha)$:
+\[
+\bar{x} \pm z \left(\frac{s}{\sqrt{n}}\right)
+\]
+
+\subsection{Confidence Interval for Proportion}
+For a confidence level $(1 - \alpha)$:
+\[
+\hat{p} \pm z \sqrt{\frac{\hat{p}(1 - \hat{p})}{n}}
+\]
+
+\section{Hypothesis Testing}
+
+\subsection{Null and Alternative Hypotheses}
+$H_0$: The null hypothesis \\
+$H_a$: The alternative hypothesis
+
+\subsection{p-value}
+The probability of obtaining a test statistic as extreme as, or more extreme than, the observed value, assuming the null hypothesis is true.
+
+\subsection{Test Statistic for a Population Mean}
+\[
+t = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}}
+\]
+
+\section{ANOVA}
+
+\subsection{One-Way ANOVA}
+The test statistic for one-way ANOVA:
+\[
+F = \frac{\text{Between-group variability}}{\text{Within-group variability}}
+\]
+
+\section{Conclusion}
+Inferential statistics provides valuable tools for making inferences about populations based on sample data. The formulas presented in this article are just a glimpse into the vast world of statistical analysis.
+
+\end{document}

@@ -22,8 +22,8 @@ class TexExtractor:
         symbols = document_body.find_all(TexExtractor.MATH_SYMBOLS)
         for index, symbol in enumerate(symbols):
             temp = symbol.copy()
-            symbol.replace_with("") 
-            symbols[index] = temp.contents
+            symbol.replace_with("") #shit breaks here bc there is nothing to replace
+            symbols[index] = temp.contents 
         paragraphs = TexExtractor.getContentsListFromNodeTree(document_body)
         equations = ["".join([str(y) for y in x]) for x in TexExtractor.getContentsListFromNodeTree(symbols)[0]] # 0???
         clearedParagraphs = [y.strip() for y in "".join(paragraphs).split("\n\n") if y != ""]

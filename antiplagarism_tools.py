@@ -177,7 +177,7 @@ class AntiPlagarism:
         matches = levenshtein_matching_blocks(levenshtein_editops(str1, str2), str1, str2)
         list_of_matches = [str1[x[0]:x[0]+x[2]] for x in matches]
         ratio = levenshtein_similarity_ratio(str1, str2) * 100
-        return AntiPlagiatResult("lavenshtein", distance, list_of_matches, ratio)
+        return AntiPlagiatResult("Levenshtein", distance, list_of_matches, ratio)
         # simple levenshtein check, to be tweaked later
         # needs difference extrapolation about differences
         # distance is distance which we use to get a percentage
@@ -229,8 +229,8 @@ class AntiPlagarism:
         if not denominator:
             return 0.0
         else:
-            return float(numerator) / denominator
-
+            return float(numerator)*100 / denominator
+    
         #can have a parameter to check by n symbol parts
     
     @staticmethod
@@ -246,7 +246,7 @@ class AntiPlagarism:
     def formula_check_jaccard(l1: list[str],l2: list[str]):
         intersection = len(list(set(l1).intersection(l2)))
         union = (len(set(l1)) + len(set(l2))) - intersection
-        return float(intersection) / union
+        return (float(intersection) / union)*100
         # need to separate stuff into a list with operators and symbols
     
     @staticmethod

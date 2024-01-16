@@ -3,3 +3,4 @@ python
 tex_file_base/cached_formulas.json
 tex_file_base/cached_paragraphs.json
 .idea/
+skradzione_wzory/__pycache__
