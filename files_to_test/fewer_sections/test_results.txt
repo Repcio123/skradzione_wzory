@@ -1,7 +1,7 @@
 {'laplace partial with full by hash': 100.0}
 {'main4 partial with full by hash': 100.0}
 {'laplace partial with full by chars': 100.0}
-{'main4 partial with full by chars': 41.940085592011414}
+{'main4 partial with full by chars': 100.0}
 {'laplace partial with full by levensthein': 100.0}
 {'main4 partial with full by levensthein': 100.0}
 {'laplace partial with full by cosine': 100.0}

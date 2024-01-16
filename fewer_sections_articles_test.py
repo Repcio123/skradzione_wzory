@@ -35,7 +35,7 @@ class FewerSections():
 
     def compare_articles_by_chars_test_main4(self):
         antiPlagarism = AntiPlagarism(self.docBaseMain4)
-        results = antiPlagarism.compare_to_document_base(self.testedDocumentLaplace, AntiPlagarism.test_by_chars)
+        results = antiPlagarism.compare_to_document_base(self.testedDocumentMain4, AntiPlagarism.test_by_chars)
         return {"main4 partial with full by chars": results[1].ratio}
 
     def compare_articles_lavensthein_laplace(self):
