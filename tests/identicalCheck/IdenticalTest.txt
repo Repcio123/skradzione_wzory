@@ -1,0 +1,5 @@
+{'Wynik testu po hashach': 1}
+{'Wynik testu po charach': 99.54522486104092}
+{'Wynik testu Levensteina': 100.0}
+{'Wynik testu Jaccarda': 100.0}
+{'Wynik testu po cosine': 100.0}
