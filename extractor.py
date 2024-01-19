@@ -19,6 +19,8 @@ class TexExtractor:
     @staticmethod   
     def separateTextAndEquationNodes(soup: TexSoup):
         document_body = soup.document
+        if not document_body:
+            return "", ""
         symbols = document_body.find_all(TexExtractor.MATH_SYMBOLS)
         for index, symbol in enumerate(symbols):
             temp = symbol.copy()

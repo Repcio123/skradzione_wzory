@@ -4,3 +4,8 @@ body{
 .report-body{
     align-items: center;
 }
+
+.match {
+    background-color: rgba(255, 0, 0, 0.2);
+    margin: 0 4px;
+}

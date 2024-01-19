@@ -1,5 +1,5 @@
 import os
-from TexSoup import TexSoup
+from TexSoup import TexSoup, TexNode
 from extractor import TexExtractor
 import json
 
