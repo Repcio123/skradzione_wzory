@@ -1,8 +1,11 @@
 from tkinter import filedialog,NS,IntVar,StringVar
+import datetime
 from customtkinter import CTk,CTkButton,CTkLabel,CTkTextbox,CTkSwitch,CTkFrame,set_appearance_mode
 import shutil,os
 import antiplagarism_tools as at
 import document_list_handler as dlh
+from TexSoup import TexNode, TexSoup
+import extractor
 
 FILEBASE_FOLDER_DIRECTORY="tex_file_base\\tex"
 TEST_FOLDER_DIRECTORY="files_to_test"
@@ -30,19 +33,90 @@ def analyze():
     if(len(left_panel.path_variable.get().split("\n"))<2):return
     article_name=left_panel.path_variable.get().split("\n")[1]
     tested_document = dlh.DocumentListHandler.initSoupFromTexFile("files_to_test/"+article_name)
-    document_base = dlh.DocumentListHandler.init_tex_document_base("tex_file_base")
+    document_base: list(TexNode) = dlh.DocumentListHandler.init_tex_document_base("tex_file_base")
     antiPlagarism = at.AntiPlagarism(document_base)
 
     listdir = os.listdir(os.path.join("tex_file_base", "tex"))
 
     results = [*zip(listdir, *(antiPlagarism.compare_to_document_base(tested_document, method) for method in selected_methods))]
 
-    for document, *result in results:
-        print(f"document: {document}")
-        for r in result:
-            print(f"{r.method}: distance: {r.distance}, match_count: {len(r.matched)}, ratio: {r.ratio}"),
-    
+    res = {}
 
+    for document, *result in results:
+        for r in result:
+            if len(r.matched) > 0:
+                if not res.get(document):
+                    res[document] = {}
+                    res[document]["matchedBlocks"] = []
+                    res[document]["reportResults"] = []
+                res[document]["matchedBlocks"] += r.matched
+                res[document]["reportResults"] += [f"{document} - {r.method}: distance: {r.distance}, ratio: {r.ratio}"],
+
+
+    dt = datetime.datetime.now().strftime("%y-%m-%d %H:%M:%S")
+    i = 1
+
+    template = ""
+    with open("html_reports/report_template.html", "r") as f:
+        template = f.read()
+
+    title = f"report nr {i}, date: {dt}"
+    totalContent = ""
+    
+    for k, v in res.items():
+        paragraphs = ""
+        results = ""
+
+        with open(f"tex_file_base/tex/{k}", "r") as h:
+            paragraphs, equations = extractor.TexExtractor.separateTextAndEquationNodes(TexSoup(h.read()))
+            paragraphs = extractor.TexExtractor.nodeListToString(paragraphs)
+            equations = extractor.TexExtractor.nodeListToString(equations)
+            
+        counter = 0
+        skip = 0
+        for block in v["matchedBlocks"]:
+            if block and len(block):
+                considered = paragraphs[skip:]
+                found = considered.find(block)
+                newSkip = skip + found
+                if found != -1 and len(block) > 2:
+                    newBlock = f"<span class=\"match\">{block}</span>"
+                    considered = considered.replace(block, newBlock, 1)
+                    newSkip = skip + found + len(newBlock)
+                    counter += 1
+                paragraphs = paragraphs[:skip] + considered
+                skip = newSkip
+                # elif equations.find(block) != -1:
+                #     equations = equations.replace(block, f"<span class=\"match\">{block}</span>", 1)
+                #     counter += 1
+        skip = 0
+        for block in v["matchedBlocks"]:
+            if block and len(block):
+                considered = equations[skip:]
+                found = considered.find(block)
+                newSkip = skip
+                if found != -1 and len(block) > 2:
+                    newBlock = f"<span class=\"match\">{block}</span>"
+                    considered = considered.replace(block, newBlock, 1)
+                    newSkip = skip + found + len(newBlock)
+                    counter += 1
+                equations = equations[:skip] + considered
+                skip = newSkip
+                # elif equations.find(block) != -1:
+                #     equations = equations.replace(block, f"<span class=\"match\">{block}</span>", 1)
+                #     counter += 1
+        if not counter:
+            continue
+        res = "".join([f"<div>{x[0]}</div>" if x else "" for x in v["reportResults"]]) + ":" + "\n\n"
+        totalContent += res + paragraphs + equations + "<hr></hr>"
+
+
+    template = template.replace("{{title}}", title)
+    template = template.replace("{{paragraphs}}", totalContent)
+
+    with open(f"html_reports/report_{dt}_{i}.html", "w+") as g:
+        g.write(template)
+        i += 1
 
     #execute the methods on selected file
     #print out results
