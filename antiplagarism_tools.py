@@ -22,7 +22,6 @@ class AntiPlagiatResult:
     matched: list[str]
     ratio: float
 
-
 PARAGHRAPH_DEST = "tex_file_base/cached_paragraphs.json"
 MIN_LEN = 8
 MIN_DIST = 1
@@ -108,7 +107,7 @@ class AntiPlagarism:
 
     @staticmethod
     def compare_paragraph_hashes(paragraphs1: list[str], paragraphs2: list[str]):
-        matchedSections = []
+        matched_paragraphs = []
         totalLength = len(TexExtractor.nodeListToString(paragraphs1))
         ratio = 0
         distance = totalLength
@@ -117,19 +116,21 @@ class AntiPlagarism:
                 if AntiPlagarism.compare_hashes(TexExtractor.nodeListToString(testedParagraph), TexExtractor.nodeListToString(referenceParagraph)):
                     matched = testedParagraph
                     matchedLength = len(matched)
-                    matchedSections.append(matched)
+                    matched_paragraphs.append(matched)
                     ratio += matchedLength / totalLength
                     distance -= matchedLength
-        return AntiPlagiatResult("compare_paragraph_hashes", distance, matchedSections, 100*ratio)
+        return AntiPlagiatResult("compare_paragraph_hashes", distance, matched_paragraphs, 100*ratio)
 
     @staticmethod
     def test_paragraph_hashes(tested_document: TexSoup, other_document: TexSoup):
         tested_paragraphs, tested_equations = TexExtractor.separateTextAndEquationNodes(tested_document)
-        tested_document_contents = [*tested_paragraphs, *tested_equations]
-
         paragraphs, equations = TexExtractor.separateTextAndEquationNodes(other_document)
-        document_contents = [*paragraphs, *equations]
-        return AntiPlagarism.compare_paragraph_hashes(tested_document_contents, document_contents)
+        paragraphs_results = AntiPlagarism.compare_paragraph_hashes(tested_paragraphs, paragraphs)
+        equations_results = AntiPlagarism.compare_paragraph_hashes(tested_equations, equations)
+        return {
+            "para": paragraphs_results,
+            "equa": equations_results,
+        }
 
     def compare_to_document_base(self, tested_document: TexSoup, comparison_function: Callable[[str, str], AntiPlagiatResult]):
         return [comparison_function(tested_document, document) for document in self.text_base]
@@ -148,24 +149,38 @@ class AntiPlagarism:
         matchedParagraphs = AntiPlagarism.compare_hashes(tested_document_paragraphs, document_paragraphs)
         matchedEquations = AntiPlagarism.compare_hashes(tested_document_equations, document_equations)
 
+        paraSymbolCount = len(tested_document_paragraphs)
+        equaSymbolCount = len(tested_document_equations)
         symbolCount = len(tested_document_paragraphs) + len(tested_document_equations)
 
         if matchedParagraphs and matchedEquations:
-            return AntiPlagiatResult("content hashes", 0, [tested_document_paragraphs, tested_document_equations], 1)
+            return {
+                "para": AntiPlagiatResult("content hashes", 0, tested_document_paragraphs, 1),
+                "equa": AntiPlagiatResult("content hashes", 0, tested_document_equations, 1),
+                }
 
         if matchedParagraphs:
             distance = symbolCount - len(tested_document_paragraphs)
             matched = [tested_document_paragraphs]
             ratio = 100 * (len(tested_document_paragraphs) / symbolCount)
-            return AntiPlagiatResult("content hashes", distance, matched, ratio)
+            return {
+                "para": AntiPlagiatResult("content hashes", distance, matched, ratio),
+                "equa": AntiPlagiatResult("content hashes", equaSymbolCount, [], 0),
+                }
 
         if matchedEquations:
             distance = symbolCount - len(tested_document_equations)
             matched = [tested_document_equations]
             ratio = 100 * (len(tested_document_equations) / symbolCount)
-            return AntiPlagiatResult("content hashes", distance, matched, ratio)
+            return {
+                "para": AntiPlagiatResult("content hashes", paraSymbolCount, [], 0),
+                "equa": AntiPlagiatResult("content hashes", distance, matched, ratio),
+                }
 
-        return AntiPlagiatResult("content hashes", symbolCount, [], 0)
+        return {
+                "para": AntiPlagiatResult("content hashes", paraSymbolCount, [], 0),
+                "equa": AntiPlagiatResult("content hashes", equaSymbolCount, [], ratio),
+                }
 
     @staticmethod
     def compare_hashes(testedDocument: str, otherDocument: str):
@@ -185,18 +200,28 @@ class AntiPlagarism:
     @staticmethod
     def test_lavenshtein_distance(tested_document: TexSoup, other_document: TexSoup):
         tested_paragraphs, tested_equations = TexExtractor.separateTextAndEquationNodes(tested_document)
-        tested_document_contents = TexExtractor.nodeListToString([*tested_paragraphs, *tested_equations])
+        tested_document_paragraphs = TexExtractor.nodeListToString(tested_paragraphs)
+        tested_document_equations = TexExtractor.nodeListToString(tested_equations)
         paragraphs, equations = TexExtractor.separateTextAndEquationNodes(other_document)
-        document_contents = TexExtractor.nodeListToString([*paragraphs, *equations])
-        return AntiPlagarism.formula_check_levenshtein_simple(tested_document_contents, document_contents)
+        document_paragraphs = TexExtractor.nodeListToString(paragraphs)
+        document_equations = TexExtractor.nodeListToString(equations)
+        return {
+            "para": AntiPlagarism.formula_check_levenshtein_simple(tested_document_paragraphs, document_paragraphs),
+            "equa": AntiPlagarism.formula_check_levenshtein_simple(tested_document_equations, document_equations),
+        }
 
     @staticmethod
     def test_by_chars(tested_document: TexSoup, other_document: TexSoup):
         tested_paragraphs, tested_equations = TexExtractor.separateTextAndEquationNodes(tested_document)
-        tested_document_contents = TexExtractor.nodeListToString([*tested_paragraphs, *tested_equations])
+        tested_document_paragraphs = TexExtractor.nodeListToString(tested_paragraphs)
+        tested_document_equations = TexExtractor.nodeListToString(tested_equations)
         paragraphs, equations = TexExtractor.separateTextAndEquationNodes(other_document)
-        document_contents = TexExtractor.nodeListToString([*paragraphs, *equations])
-        return StringComparison.compareChars(tested_document_contents, document_contents)
+        document_paragraphs = TexExtractor.nodeListToString(paragraphs)
+        document_equations = TexExtractor.nodeListToString(equations)
+        return {
+            "para": StringComparison.compareChars(tested_document_paragraphs, document_paragraphs),
+            "equa": StringComparison.compareChars(tested_document_equations, document_equations),
+        }
 
     @staticmethod
     def formula_split_symbols(formula:str):
@@ -236,11 +261,17 @@ class AntiPlagarism:
     @staticmethod
     def test_cosine_distance(tested_document: TexSoup, other_document: TexSoup):
         tested_paragraphs, tested_equations = TexExtractor.separateTextAndEquationNodes(tested_document)
-        tested_document_contents = TexExtractor.nodeListToString([*tested_paragraphs, *tested_equations])
+        tested_document_paragraphs = TexExtractor.nodeListToString(tested_paragraphs)
+        tested_document_equations = TexExtractor.nodeListToString(tested_equations)
         paragraphs, equations = TexExtractor.separateTextAndEquationNodes(other_document)
-        document_contents = TexExtractor.nodeListToString([*paragraphs, *equations])
-        ratio = AntiPlagarism.formula_check_cosine(tested_document_contents, document_contents)
-        return AntiPlagiatResult("cosine", float('nan'), [], ratio)
+        document_paragraphs = TexExtractor.nodeListToString(paragraphs)
+        document_equations = TexExtractor.nodeListToString(equations)
+        ratio1 = AntiPlagarism.formula_check_cosine(tested_document_paragraphs, document_paragraphs)
+        ratio2 = AntiPlagarism.formula_check_cosine(tested_document_equations, document_equations)
+        return {
+            "para": AntiPlagiatResult("cosine", float('nan'), [], ratio1),
+            "equa": AntiPlagiatResult("cosine", float('nan'), [], ratio2),
+        }
 
     @staticmethod
     def formula_check_jaccard(l1: list[str],l2: list[str]):
@@ -252,11 +283,19 @@ class AntiPlagarism:
     @staticmethod
     def test_jaccard_distance(tested_document: TexSoup, other_document: TexSoup):
         tested_paragraphs, tested_equations = TexExtractor.separateTextAndEquationNodes(tested_document)
-        tested_document_contents = TexExtractor.nodeListToString([*tested_paragraphs, *tested_equations])
+        tested_document_paragraphs = TexExtractor.nodeListToString(tested_paragraphs)
+        tested_document_equations = TexExtractor.nodeListToString(tested_equations)
         paragraphs, equations = TexExtractor.separateTextAndEquationNodes(other_document)
-        document_contents = TexExtractor.nodeListToString([*paragraphs, *equations])
-        ratio = AntiPlagarism.formula_check_jaccard(tested_document_contents, document_contents)
-        return AntiPlagiatResult("jaccard", float('nan'), [], ratio)
+        document_paragraphs = TexExtractor.nodeListToString(paragraphs)
+        document_equations = TexExtractor.nodeListToString(equations)
+        ratio1 = AntiPlagarism.formula_check_cosine(tested_document_paragraphs, document_paragraphs)
+        ratio2 = AntiPlagarism.formula_check_cosine(tested_document_equations, document_equations)
+
+        return {
+            "para": AntiPlagiatResult("jaccard", float('nan'), [], ratio1),
+            "equa": AntiPlagiatResult("jaccard", float('nan'), [], ratio2),
+        }
+
     #def formula_check_tree_model(self,checked:str): #optional
         # make a tree with separated operators as parent nodes and operands as children
         ...
