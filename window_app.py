@@ -6,9 +6,11 @@ import antiplagarism_tools as at
 import document_list_handler as dlh
 from TexSoup import TexNode, TexSoup
 import extractor
+import webbrowser
 
 FILEBASE_FOLDER_DIRECTORY="tex_file_base\\tex"
 TEST_FOLDER_DIRECTORY="files_to_test"
+HTML_REPORT_DIRECTORY="html_reports"
 def upload_file_to_base():
     path=filedialog.askopenfilename()
     shutil.copy(path,os.getcwd()+"\\"+FILEBASE_FOLDER_DIRECTORY)
@@ -22,7 +24,7 @@ def select_file_to_check():
     path_variable.set("Selected Article: \n"+path.split("/")[-1])
 
 class Left_Panel(CTkFrame):
-    def __init__(self, master, path_variable, **kwargs):
+    def __init__(self, master, path_variable,report_variable, **kwargs):
         super().__init__(master,**kwargs)
         self.char_method_var=IntVar()
         self.word_method_var=IntVar()
@@ -43,10 +45,10 @@ class Left_Panel(CTkFrame):
         self.cosine_formula_method_checkbox=CTkSwitch(self,text="By Cosine",variable=self.formula_cosine_var).grid(column=0,row=10)
         self.jaccard_formula_method_checkbox=CTkSwitch(self,text="By Jaccard",variable=self.formula_jaccard_var).grid(column=0,row=11)
         self.analyze_methods_padding=CTkFrame(self,height=20,fg_color="transparent").grid(column=0,row=12)
-        self.analyze_button=CTkButton(self,text="Analyze",command=lambda: self.analyze(path_variable),corner_radius=32).grid(column=0,row=13,pady=20)
+        self.analyze_button=CTkButton(self,text="Analyze",command=lambda: self.analyze(path_variable,report_variable),corner_radius=32).grid(column=0,row=13,pady=20)
+        self.report_button=CTkButton(self,text="Open Last Report",command=lambda:self.open_report(report_variable),corner_radius=32).grid(column=0,row=14,pady=20)
 
-
-    def analyze(self, path_variable):
+    def analyze(self, path_variable,report_variable):
         selected_methods=[]
         if(self.char_method_var.get()==1):selected_methods+=[at.AntiPlagarism.test_by_chars]
         if(self.phrase_method_var.get()==1):selected_methods+=[at.AntiPlagarism.test_paragraph_hashes]
@@ -55,7 +57,9 @@ class Left_Panel(CTkFrame):
         if(self.formula_cosine_var.get()==1):selected_methods+=[at.AntiPlagarism.test_cosine_distance]
         if(self.formula_jaccard_var.get()==1):selected_methods+=[at.AntiPlagarism.test_jaccard_distance]
         print("Selected methods: ", selected_methods)
-        if(len(path_variable.get().split("\n"))<2):return
+        if(len(path_variable.get().split("\n"))<2):
+            print("No article selected")
+            return
         article_name=path_variable.get().split("\n")[1]
         tested_document = dlh.DocumentListHandler.initSoupFromTexFile("files_to_test/"+article_name)
         document_base: list(TexNode) = dlh.DocumentListHandler.init_tex_document_base("tex_file_base")
@@ -88,7 +92,7 @@ class Left_Panel(CTkFrame):
                     res[document]["equa"]["matchedBlocks"] += r.matched
                     res[document]["equa"]["reportResults"] += [f"{document} - {r.method}: distance: {r.distance}, ratio: {r.ratio}"],
 
-        dt = datetime.datetime.now().strftime("%y-%m-%d %H:%M:%S")
+        dt = datetime.datetime.now().strftime("%y-%m-%d_%H-%M-%S")
         i = 1
 
         template = ""
@@ -150,23 +154,33 @@ class Left_Panel(CTkFrame):
         template = template.replace("{{equations}}", totalEquations)
         template = template.replace("{{paragraphs}}", totalParagraphs)
 
+        report_variable.set(f"html_reports/report_{dt}_{i}.html")
+
         with open(f"html_reports/report_{dt}_{i}.html", "w+") as g:
             g.write(template)
             i += 1
-
-        #execute the methods on selected file
+        print("Analysis Complete")
+    
+    def open_report(self,report_variable):
+        if(report_variable.get()!=""):
+                new = 2 # open in a new tab, if possible
+                url = "file://"+os.getcwd()+"\\"+report_variable.get()
+                print(url)
+                webbrowser.open(url,new=new)
+        else:
+            print("No analysis made - no reports")
         #print out results
-        #modify html report
 
 window=CTk()
 path_variable=StringVar()
 path_variable.set("Selected Article:")
-left_panel=Left_Panel(window,path_variable,height=400,width=200).grid(column=0,rowspan=20)
+report_variable=StringVar()
+report_variable.set("")
+print(report_variable.get())
+left_panel=Left_Panel(window,path_variable,report_variable,height=400,width=200).grid(column=0,rowspan=20)
 window.title("LaTeX AntiPlagarism App")
 set_appearance_mode('dark')
 left_mid_padding=CTkFrame(window,width=20,height=0,fg_color="transparent").grid(column=1,row=0)
 result_label=CTkLabel(window,text="Results:").grid(column=4,row=0)
 result_box=CTkTextbox(window,height=400,width=400).grid(column=4,row=1,rowspan=13,padx=20)
 window.mainloop()
-
-# make frames for left, middle, right panel

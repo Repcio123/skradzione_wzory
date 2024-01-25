@@ -179,7 +179,7 @@ class AntiPlagarism:
 
         return {
                 "para": AntiPlagiatResult("content hashes", paraSymbolCount, [], 0),
-                "equa": AntiPlagiatResult("content hashes", equaSymbolCount, [], ratio),
+                "equa": AntiPlagiatResult("content hashes", equaSymbolCount, [], 0), #changed to 0 bc no value assigned
                 }
 
     @staticmethod
