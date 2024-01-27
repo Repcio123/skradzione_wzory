@@ -35,24 +35,24 @@ class IdenticalFunctionsTester:
 
     def _test_hashes(self, tested_document):
         results_hashes = self.antiPlagarism.compare_to_document_base(tested_document, AntiPlagarism.test_full_content_hashes)
-        return {"Wynik testu po hashach": results_hashes[0].ratio}
+        return results_hashes[0]['para'].ratio, results_hashes[0]['equa'].ratio
 
     def _test_chars(self, tested_document):
         tested_document_content = TexSoup(open(self.tested_document_path, 'r').read())
         results_chars = self.antiPlagarism.compare_to_document_base(tested_document_content, AntiPlagarism.test_by_chars)
-        return {"Wynik testu po charach": results_chars[0].ratio}
+        return results_chars[0]['para'].ratio, results_chars[0]['equa'].ratio
 
     def _test_levenstein(self, tested_document):
         results_levenstein = self.antiPlagarism.compare_to_document_base(tested_document, AntiPlagarism.test_lavenshtein_distance)
-        return {"Wynik testu Levensteina": results_levenstein[0].ratio}
+        return results_levenstein[0]['para'].ratio, results_levenstein[0]['equa'].ratio
 
     def _test_jaccard(self, tested_document):
         results_jaccard = self.antiPlagarism.compare_to_document_base(tested_document, AntiPlagarism.test_jaccard_distance)
-        return {"Wynik testu Jaccarda": results_jaccard[0].ratio}
+        return results_jaccard[0]['para'].ratio, results_jaccard[0]['equa'].ratio
 
     def _test_cosine(self, tested_document):
         results_cosine = self.antiPlagarism.compare_to_document_base(tested_document, AntiPlagarism.test_cosine_distance)
-        return {"Wynik testu po cosine": results_cosine[0].ratio}
+        return results_cosine[0]['para'].ratio, results_cosine[0]['equa'].ratio
 
 if __name__ == "__main__":
     is_min_tex_amount(get_documents_list())

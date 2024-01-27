@@ -16,52 +16,52 @@ class FewerSections():
     def compare_articles_by_hashes_test_laplace(self):
         antiPlagarism = AntiPlagarism(self.docBaseLaplace)
         results = antiPlagarism.compare_to_document_base(self.testedDocumentLaplace, AntiPlagarism.test_full_content_hashes)
-        return {"laplace partial with full by hash": results[1].ratio}
+        return results[0]['para'].ratio, results[0]['equa'].ratio
 
     def compare_articles_by_hashes_test_main4(self):
         antiPlagarism = AntiPlagarism(self.docBaseMain4)
         results = antiPlagarism.compare_to_document_base(self.testedDocumentMain4, AntiPlagarism.test_full_content_hashes)
-        return {"main4 partial with full by hash" : results[1].ratio}
+        return results[0]['para'].ratio, results[0]['equa'].ratio
 
     def compare_articles_by_chars_test_laplace(self):
         antiPlagarism = AntiPlagarism(self.docBaseLaplace)
         results = antiPlagarism.compare_to_document_base(self.testedDocumentLaplace, AntiPlagarism.test_by_chars)
-        return {"laplace partial with full by chars": results[1].ratio}
+        return results[0]['para'].ratio, results[0]['equa'].ratio
 
     def compare_articles_by_chars_test_main4(self):
         antiPlagarism = AntiPlagarism(self.docBaseMain4)
         results = antiPlagarism.compare_to_document_base(self.testedDocumentMain4, AntiPlagarism.test_by_chars)
-        return {"main4 partial with full by chars": results[1].ratio}
+        return results[0]['para'].ratio, results[0]['equa'].ratio
 
     def compare_articles_lavensthein_laplace(self):
         antiPlagarism = AntiPlagarism(self.docBaseLaplace)
         results = antiPlagarism.compare_to_document_base(self.testedDocumentLaplace, AntiPlagarism.test_lavenshtein_distance)
-        return {"laplace partial with full by levensthein": results[1].ratio}
+        return results[0]['para'].ratio, results[0]['equa'].ratio
 
     def compare_articles_lavensthein_main4(self):
         antiPlagarism = AntiPlagarism(self.docBaseMain4)
         results = antiPlagarism.compare_to_document_base(self.testedDocumentMain4, AntiPlagarism.test_lavenshtein_distance)
-        return {"main4 partial with full by levensthein": results[1].ratio}
+        return results[0]['para'].ratio, results[0]['equa'].ratio
 
     def compare_articles_cosine_laplace(self):
         antiPlagarism = AntiPlagarism(self.docBaseLaplace)
         results = antiPlagarism.compare_to_document_base(self.testedDocumentLaplace, AntiPlagarism.test_cosine_distance)
-        return {"laplace partial with full by cosine": results[1].ratio}
+        return results[0]['para'].ratio, results[0]['equa'].ratio
 
     def compare_articles_cosine_main4(self):
         antiPlagarism = AntiPlagarism(self.docBaseMain4)
         results = antiPlagarism.compare_to_document_base(self.testedDocumentMain4, AntiPlagarism.test_cosine_distance)
-        return {"main4 partial with full by cosine": results[1].ratio}
+        return results[0]['para'].ratio, results[0]['equa'].ratio
 
     def compare_articles_jaccard_laplace(self):
         antiPlagarism = AntiPlagarism(self.docBaseLaplace)
         results = antiPlagarism.compare_to_document_base(self.testedDocumentLaplace, AntiPlagarism.test_jaccard_distance)
-        return {"laplace partial with full by jaccard": results[1].ratio}
+        return results[0]['para'].ratio, results[0]['equa'].ratio
     
     def compare_articles_jaccard_laplace(self):
         antiPlagarism = AntiPlagarism(self.docBaseMain4)
         results = antiPlagarism.compare_to_document_base(self.testedDocumentMain4, AntiPlagarism.test_jaccard_distance)
-        return {"main4 partial with full by jaccard": results[1].ratio}
+        return results[0]['para'].ratio, results[0]['equa'].ratio
     
     def run_tests(self, path):
         with open(path, "w") as f:
