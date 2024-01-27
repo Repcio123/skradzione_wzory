@@ -244,6 +244,7 @@ class AntiPlagarism:
 
     @staticmethod
     def formula_check_cosine(l1: list[str], l2: list[str]): #list of symbols
+        
         vec1 = Counter(l1)
         vec2 = Counter(l2)
         intersection = set(vec1.keys()) & set(vec2.keys())
@@ -261,11 +262,11 @@ class AntiPlagarism:
     @staticmethod
     def test_cosine_distance(tested_document: TexSoup, other_document: TexSoup):
         tested_paragraphs, tested_equations = TexExtractor.separateTextAndEquationNodes(tested_document)
-        tested_document_paragraphs = TexExtractor.nodeListToString(tested_paragraphs)
-        tested_document_equations = TexExtractor.nodeListToString(tested_equations)
+        tested_document_paragraphs = TexExtractor.nodeListToString(tested_paragraphs).split()
+        tested_document_equations = AntiPlagarism.formula_split_symbols(TexExtractor.nodeListToString(tested_equations))
         paragraphs, equations = TexExtractor.separateTextAndEquationNodes(other_document)
-        document_paragraphs = TexExtractor.nodeListToString(paragraphs)
-        document_equations = TexExtractor.nodeListToString(equations)
+        document_paragraphs = TexExtractor.nodeListToString(paragraphs).split()
+        document_equations = AntiPlagarism.formula_split_symbols(TexExtractor.nodeListToString(equations))
         ratio1 = AntiPlagarism.formula_check_cosine(tested_document_paragraphs, document_paragraphs)
         ratio2 = AntiPlagarism.formula_check_cosine(tested_document_equations, document_equations)
         return {
@@ -283,11 +284,11 @@ class AntiPlagarism:
     @staticmethod
     def test_jaccard_distance(tested_document: TexSoup, other_document: TexSoup):
         tested_paragraphs, tested_equations = TexExtractor.separateTextAndEquationNodes(tested_document)
-        tested_document_paragraphs = TexExtractor.nodeListToString(tested_paragraphs)
-        tested_document_equations = TexExtractor.nodeListToString(tested_equations)
+        tested_document_paragraphs = TexExtractor.nodeListToString(tested_paragraphs).split()
+        tested_document_equations = AntiPlagarism.formula_split_symbols(TexExtractor.nodeListToString(tested_equations))
         paragraphs, equations = TexExtractor.separateTextAndEquationNodes(other_document)
-        document_paragraphs = TexExtractor.nodeListToString(paragraphs)
-        document_equations = TexExtractor.nodeListToString(equations)
+        document_paragraphs = TexExtractor.nodeListToString(paragraphs).split()
+        document_equations = AntiPlagarism.formula_split_symbols(TexExtractor.nodeListToString(equations))
         ratio1 = AntiPlagarism.formula_check_cosine(tested_document_paragraphs, document_paragraphs)
         ratio2 = AntiPlagarism.formula_check_cosine(tested_document_equations, document_equations)
 
