@@ -13,27 +13,27 @@ class UniqueArticles():
     def compare_articles_by_hashes(self):
         antiPlagarism = AntiPlagarism(self.docBaseLaplace)
         results = antiPlagarism.compare_to_document_base(self.testedDocumentAI, AntiPlagarism.test_full_content_hashes)
-        return {"by_hash": [results[1].ratio, results[2].ratio]}
+        return results[1]['para'].ratio, results[1]['equa'].ratio
 
     def compare_articles_by_chars(self):
         antiPlagarism = AntiPlagarism(self.docBaseLaplace)
         results = antiPlagarism.compare_to_document_base(self.testedDocumentAI, AntiPlagarism.test_by_chars)
-        return {"by_chars": [results[1].ratio, results[2].ratio]}
+        return results[1]['para'].ratio, results[1]['equa'].ratio
 
     def compare_articles_lavenshtein(self):
         antiPlagarism = AntiPlagarism(self.docBaseLaplace)
         results = antiPlagarism.compare_to_document_base(self.testedDocumentAI, AntiPlagarism.test_lavenshtein_distance)
-        return {"lavensthein": [results[1].ratio, results[2].ratio]}
+        return results[1]['para'].ratio, results[1]['equa'].ratio
 
     def compare_articles_cosine(self):
         antiPlagarism = AntiPlagarism(self.docBaseLaplace)
         results = antiPlagarism.compare_to_document_base(self.testedDocumentAI, AntiPlagarism.test_cosine_distance)
-        return {"cosine": [results[1].ratio, results[2].ratio]}
+        return results[1]['para'].ratio, results[1]['equa'].ratio
 
     def compare_articles_jaccard(self):
         antiPlagarism = AntiPlagarism(self.docBaseLaplace)
         results = antiPlagarism.compare_to_document_base(self.testedDocumentAI, AntiPlagarism.test_jaccard_distance)
-        return {"jaccard": [results[1].ratio, results[2].ratio]}
+        return results[1]['para'].ratio, results[1]['equa'].ratio
     
     
     def run_tests(self, path):
