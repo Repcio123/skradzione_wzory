@@ -297,11 +297,6 @@ class AntiPlagarism:
             "equa": AntiPlagiatResult("jaccard", float('nan'), [], ratio2),
         }
 
-    #def formula_check_tree_model(self,checked:str): #optional
-        # make a tree with separated operators as parent nodes and operands as children
-        ...
-    #def with_nlp(self,checked:str):
-        ...
 
 #if __name__=='__main__':
     #distance,matches,ratio=AntiPlagarism.formula_check_levenshtein_simple('sitting','kitten')
@@ -309,7 +304,15 @@ class AntiPlagarism:
 #    test = "jd"
 
 if __name__ == '__main__':
-    tested_document = DocumentListHandler.initSoupFromTexFile("files_to_test/lagrange.tex")
+    formula1='x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}'
+    formula2='ax^2 + bx + c = 0'
+    result=AntiPlagarism.formula_check_levenshtein_simple(formula1,formula2)
+    print(f"Levenshtein Ratio: {result.ratio}")
+    ratio=AntiPlagarism.formula_check_cosine(AntiPlagarism.formula_split_symbols(formula1),AntiPlagarism.formula_split_symbols(formula2))
+    print(f"Cosine Ratio: {ratio}")
+    ratio=AntiPlagarism.formula_check_jaccard(AntiPlagarism.formula_split_symbols(formula1),AntiPlagarism.formula_split_symbols(formula2))
+    print(f"Jaccard Ratio: {ratio}")
+    tested_document = DocumentListHandler.initSoupFromTexFile("files_to_test/connected_test/tex/numeric_queue.tex")
     document_base = DocumentListHandler.init_tex_document_base("tex_file_base")
     antiPlagarism = AntiPlagarism(document_base)
 
@@ -324,7 +327,7 @@ if __name__ == '__main__':
     for test_document, *result in results:
         print(f"{test_document}:")
         for r in result:
-            print(f"{r.method}: distance: {r.distance}, match_count: {len(r.matched)}, ratio: {r.ratio}"),
+            print(f"{r['para'].method}: distance: {r['para'].distance}, match_count: {len(r['para'].matched)}, ratio: {r['para'].ratio}"),
 
 # TODO:
 # 0. preparation

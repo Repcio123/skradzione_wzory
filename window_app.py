@@ -92,6 +92,11 @@ class Left_Panel(CTkFrame):
                     res[document]["equa"]["matchedBlocks"] += r.matched
                     res[document]["equa"]["reportResults"] += [f"{document} - {r.method}: distance: {r.distance}, ratio: {r.ratio}"],
 
+        for document, *result in results:
+            for re in result:
+                print(re)
+
+            
         dt = datetime.datetime.now().strftime("%y-%m-%d_%H-%M-%S")
         i = 1
 
