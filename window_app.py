@@ -24,7 +24,7 @@ def select_file_to_check():
     path_variable.set("Selected Article: \n"+path.split("/")[-1])
 
 class Left_Panel(CTkFrame):
-    def __init__(self, master, path_variable,report_variable, **kwargs):
+    def __init__(self, master, path_variable,report_variable,textbox, **kwargs):
         super().__init__(master,**kwargs)
         self.char_method_var=IntVar()
         self.word_method_var=IntVar()
@@ -45,10 +45,10 @@ class Left_Panel(CTkFrame):
         self.cosine_formula_method_checkbox=CTkSwitch(self,text="By Cosine",variable=self.formula_cosine_var).grid(column=0,row=10)
         self.jaccard_formula_method_checkbox=CTkSwitch(self,text="By Jaccard",variable=self.formula_jaccard_var).grid(column=0,row=11)
         self.analyze_methods_padding=CTkFrame(self,height=20,fg_color="transparent").grid(column=0,row=12)
-        self.analyze_button=CTkButton(self,text="Analyze",command=lambda: self.analyze(path_variable,report_variable),corner_radius=32).grid(column=0,row=13,pady=20)
+        self.analyze_button=CTkButton(self,text="Analyze",command=lambda: self.analyze(path_variable,report_variable,textbox),corner_radius=32).grid(column=0,row=13,pady=20)
         self.report_button=CTkButton(self,text="Open Last Report",command=lambda:self.open_report(report_variable),corner_radius=32).grid(column=0,row=14,pady=20)
 
-    def analyze(self, path_variable,report_variable):
+    def analyze(self, path_variable,report_variable,textbox):
         selected_methods=[]
         if(self.char_method_var.get()==1):selected_methods+=[at.AntiPlagarism.test_by_chars]
         if(self.phrase_method_var.get()==1):selected_methods+=[at.AntiPlagarism.test_paragraph_hashes]
@@ -70,6 +70,14 @@ class Left_Panel(CTkFrame):
         results = [*zip(listdir, *(antiPlagarism.compare_to_document_base(tested_document, method) for method in selected_methods))]
 
         res = {}
+        text_report=""
+        for test_document, *result in results:
+            text_report+=f"{test_document}:\n"
+            for r in result:
+                text_report+=f"{r['para'].method}: distance: {r['para'].distance}, match_count: {len(r['para'].matched)}, ratio: {r['para'].ratio}\n"
+        print(text_report)
+
+        textbox.insert("0.0", text_report)
 
         for document, *result in results:
             for re in result:
@@ -92,9 +100,6 @@ class Left_Panel(CTkFrame):
                     res[document]["equa"]["matchedBlocks"] += r.matched
                     res[document]["equa"]["reportResults"] += [f"{document} - {r.method}: distance: {r.distance}, ratio: {r.ratio}"],
 
-        for document, *result in results:
-            for re in result:
-                print(re)
 
             
         dt = datetime.datetime.now().strftime("%y-%m-%d_%H-%M-%S")
@@ -181,11 +186,15 @@ path_variable=StringVar()
 path_variable.set("Selected Article:")
 report_variable=StringVar()
 report_variable.set("")
+textbox_variable=StringVar()
+textbox_variable.set("")
 print(report_variable.get())
-left_panel=Left_Panel(window,path_variable,report_variable,height=400,width=200).grid(column=0,rowspan=20)
 window.title("LaTeX AntiPlagarism App")
 set_appearance_mode('dark')
-left_mid_padding=CTkFrame(window,width=20,height=0,fg_color="transparent").grid(column=1,row=0)
+left_mid_padding=CTkFrame(window,width=20,height=0,fg_color="transparent").grid(column=1)
 result_label=CTkLabel(window,text="Results:").grid(column=4,row=0)
-result_box=CTkTextbox(window,height=400,width=400).grid(column=4,row=1,rowspan=13,padx=20)
+result_box=CTkTextbox(window,height=400,width=400)
+result_box.grid(column=4,row=1,rowspan=13,padx=20)
+print(type(result_box))
+left_panel=Left_Panel(window,path_variable,report_variable,result_box,height=400,width=200).grid(column=0,row=0,rowspan=20)
 window.mainloop()
