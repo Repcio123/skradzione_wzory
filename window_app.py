@@ -29,6 +29,10 @@ def upload_file_to_base():
     path=filedialog.askopenfilename()
     shutil.copy(path,os.getcwd()+"\\"+FILEBASE_FOLDER_DIRECTORY)
 
+def upload_file_to_tests():
+    path=filedialog.askopenfilename()
+    shutil.copy(path,os.getcwd()+"\\"+TEST_FOLDER_DIRECTORY)
+
 def select_file_to_check():
     filetypes = (
         ('LaTeX files', '*.tex'),
@@ -36,7 +40,6 @@ def select_file_to_check():
     )
     path=filedialog.askopenfilename(filetypes=filetypes,initialdir=os.getcwd()+"\\"+TEST_FOLDER_DIRECTORY)
     path_variable.set("Selected Article: \n"+path.split("/")[-1])
-
 class Left_Panel(CTkFrame):
     def __init__(self, master, path_variable,report_variable,textbox, **kwargs):
         super().__init__(master,**kwargs)
@@ -49,6 +52,7 @@ class Left_Panel(CTkFrame):
         self.formula_cosine_var=IntVar()
         self.formula_jaccard_var=IntVar()
         self.upload_button=CTkButton(self,text="Upload to Base", command=upload_file_to_base,corner_radius=32).grid(column=0,row=0,pady=20)
+        self.upload_test_button=CTkButton(self,text="Upload to Test Base", command=upload_file_to_tests,corner_radius=32).grid(column=0,row=1,pady=20)
         self.check_file_button=CTkButton(self,text="Pick Article\n to Check",command=select_file_to_check,corner_radius=64).grid(column=0,row=2,pady=20)
         self.filePath_selected_label=CTkLabel(self,textvariable=path_variable).grid(column=0,row=3,pady=20)
         self.select_methods_label=CTkLabel(self,text="Select methods").grid(column=0,row=5)
