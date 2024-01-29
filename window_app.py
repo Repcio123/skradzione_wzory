@@ -11,7 +11,20 @@ import webbrowser
 FILEBASE_FOLDER_DIRECTORY="tex_file_base\\tex"
 TEST_FOLDER_DIRECTORY="files_to_test"
 HTML_REPORT_DIRECTORY="html_reports"
-PLAGIAT_LEVEL_PERCENTAGES={}
+PLAGIAT_LEVEL_PERCENTAGES={"compare_chars":{"para":[60.0,80.0],
+                                            "equa":[50.0,70.0]},
+                            "compare_paragraph_hashes":{"para":[60.0,80.0],
+                                                        "equa":[50.0,70.0]},
+                            "compare_hashes":{"para":[20.0,60.0],
+                                                "equa":[20.0,60.0]},
+                            "Levenshtein":{"para":[60.0,80.0],
+                                                "equa":[60.0,70.0]},  
+                            "cosine":{"para":[80.0,95.0],
+                                                "equa":[80.0,95.0]},
+                            "jaccard":{"para":[70.0,90.0],
+                                                "equa":[80.0,95.0]}  
+                                                        } # pierwsza wartość to pierwszy próg czyli średnie podejrzenie o plagiat
+                                                            # druga wartość to drugi próg czyli mocne podejrzenia o plagiat, chodzi o wartość ratio
 def upload_file_to_base():
     path=filedialog.askopenfilename()
     shutil.copy(path,os.getcwd()+"\\"+FILEBASE_FOLDER_DIRECTORY)
