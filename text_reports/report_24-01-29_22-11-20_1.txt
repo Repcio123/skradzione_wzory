@@ -1,0 +1,173 @@
+geometric_sequences.tex - Levenshtein: distance: 0, ratio: 100.0
+
+matrix_multiplication.tex - Levenshtein: distance: 0, ratio: 100.0
+
+analityc_geometry.tex - Levenshtein: distance: 0, ratio: 100.0
+
+RW2.tex - Levenshtein: distance: 0, ratio: 100.0
+
+main4_partial.tex - Levenshtein: distance: 0, ratio: 100.0
+
+number_systems.tex - Levenshtein: distance: 0, ratio: 100.0
+
+taylor_series.tex - Levenshtein: distance: 0, ratio: 100.0
+
+main3.tex - Levenshtein: distance: 0, ratio: 100.0
+
+statistics.tex - Levenshtein: distance: 0, ratio: 100.0
+
+LU_matrix_factorization.tex - Levenshtein: distance: 0, ratio: 100.0
+
+main2.tex - Levenshtein: distance: 0, ratio: 100.0
+
+main1.tex - Levenshtein: distance: 0, ratio: 100.0
+
+number_intervals.tex - Levenshtein: distance: 0, ratio: 100.0
+
+optimization.tex - Levenshtein: distance: 0, ratio: 100.0
+
+numerical_integration.tex - Levenshtein: distance: 0, ratio: 100.0
+
+RW3.tex - content hashes: distance: 4731, ratio: 0.0RW3.tex - Levenshtein: distance: 0, ratio: 100.0
+
+nonlinear_systems_of_equations.tex - content hashes: distance: 4731, ratio: 0.0nonlinear_systems_of_equations.tex - Levenshtein: distance: 0, ratio: 100.0
+
+AI.tex - Levenshtein: distance: 0, ratio: 100.0
+
+RW1.tex - Levenshtein: distance: 0, ratio: 100.0
+
+laplace_partial.tex - Levenshtein: distance: 0, ratio: 100.0
+
+numeric_integrals.tex - Levenshtein: distance: 0, ratio: 100.0
+
+approximate_system_of_equations.tex - Levenshtein: distance: 0, ratio: 100.0
+
+function_limits.tex - Levenshtein: distance: 0, ratio: 100.0
+
+logarithms.tex - Levenshtein: distance: 0, ratio: 100.0
+
+modeling.tex - content hashes: distance: 4731, ratio: 0.0modeling.tex - Levenshtein: distance: 0, ratio: 100.0
+
+systems_of_equations.tex - Levenshtein: distance: 0, ratio: 100.0
+
+dummy_PCA.tex - Levenshtein: distance: 0, ratio: 100.0
+
+queue.tex - Levenshtein: distance: 0, ratio: 100.0
+
+trigonometry.tex - content hashes: distance: 4731, ratio: 0.0trigonometry.tex - Levenshtein: distance: 0, ratio: 100.0
+
+fractals.tex - Levenshtein: distance: 0, ratio: 100.0
+
+main4.tex - Levenshtein: distance: 0, ratio: 100.0
+
+rational_expressions.tex - Levenshtein: distance: 0, ratio: 100.0
+
+modelling_PCA.tex - Levenshtein: distance: 0, ratio: 100.0
+
+statistics2.tex - Levenshtein: distance: 0, ratio: 100.0
+
+prime_numbers.tex - Levenshtein: distance: 0, ratio: 100.0
+
+arithmetic_sequences.tex - Levenshtein: distance: 0, ratio: 100.0
+
+fourier.tex - Levenshtein: distance: 0, ratio: 100.0
+
+lagrange.tex - Levenshtein: distance: 0, ratio: 100.0
+
+differential_geometry.tex - Levenshtein: distance: 0, ratio: 100.0
+
+laplace.tex - Levenshtein: distance: 0, ratio: 100.0
+
+polynomials.tex - Levenshtein: distance: 0, ratio: 100.0
+
+convergence_of_series.tex - Levenshtein: distance: 0, ratio: 100.0
+
+combinatorics.tex - Levenshtein: distance: 0, ratio: 100.0
+
+
+geometric_sequences.tex (paragraphs) - Levenshtein: distance: 3504, ratio: 38.95290937544459
+
+matrix_multiplication.tex (paragraphs) - Levenshtein: distance: 3713, ratio: 32.761128891475124
+
+analityc_geometry.tex (paragraphs) - Levenshtein: distance: 3524, ratio: 37.917999418435585
+
+RW2.tex (paragraphs) - Levenshtein: distance: 4199, ratio: 20.06726457399103
+
+main4_partial.tex (paragraphs) - Levenshtein: distance: 3867, ratio: 29.659453111893974
+
+number_systems.tex (paragraphs) - Levenshtein: distance: 3481, ratio: 38.96174124645127
+
+taylor_series.tex (paragraphs) - Levenshtein: distance: 3677, ratio: 35.00546960462573
+
+main3.tex (paragraphs) - Levenshtein: distance: 3469, ratio: 40.62059238363893
+
+statistics.tex (paragraphs) - Levenshtein: distance: 3796, ratio: 30.49072411729503
+
+LU_matrix_factorization.tex (paragraphs) - Levenshtein: distance: 3835, ratio: 29.6082599453386
+
+main2.tex (paragraphs) - Levenshtein: distance: 3844, ratio: 29.48617835389661
+
+main1.tex (paragraphs) - Levenshtein: distance: 3478, ratio: 39.247774906689635
+
+number_intervals.tex (paragraphs) - Levenshtein: distance: 3977, ratio: 25.962487660414613
+
+optimization.tex (paragraphs) - Levenshtein: distance: 3546, ratio: 37.829232995658465
+
+numerical_integration.tex (paragraphs) - Levenshtein: distance: 3835, ratio: 30.859440442285134
+
+RW3.tex (paragraphs) - Levenshtein: distance: 3387, ratio: 42.35173034864273
+
+nonlinear_systems_of_equations.tex (paragraphs) - Levenshtein: distance: 3826, ratio: 31.059602649006624
+
+AI.tex (paragraphs) - Levenshtein: distance: 3814, ratio: 31.479329237921306
+
+RW1.tex (paragraphs) - Levenshtein: distance: 3539, ratio: 37.898741586186716
+
+laplace_partial.tex (paragraphs) - Levenshtein: distance: 3400, ratio: 41.81373180471467
+
+numeric_integrals.tex (paragraphs) - Levenshtein: distance: 3519, ratio: 38.57984763547506
+
+approximate_system_of_equations.tex (paragraphs) - Levenshtein: distance: 3439, ratio: 40.054794520547944
+
+function_limits.tex (paragraphs) - Levenshtein: distance: 3497, ratio: 38.93401738634744
+
+logarithms.tex (paragraphs) - Levenshtein: distance: 3732, ratio: 33.06911857958148
+
+modeling.tex (paragraphs) - Levenshtein: distance: 3401, ratio: 41.67748636717735
+
+systems_of_equations.tex (paragraphs) - Levenshtein: distance: 3916, ratio: 29.3905517490083
+
+dummy_PCA.tex (paragraphs) - Levenshtein: distance: 3430, ratio: 42.35524544007835
+
+queue.tex (paragraphs) - Levenshtein: distance: 3963, ratio: 26.3729036501151
+
+trigonometry.tex (paragraphs) - Levenshtein: distance: 3790, ratio: 30.903351871336238
+
+fractals.tex (paragraphs) - Levenshtein: distance: 3675, ratio: 34.85838779956427
+
+main4.tex (paragraphs) - Levenshtein: distance: 3436, ratio: 40.720333288536494
+
+rational_expressions.tex (paragraphs) - Levenshtein: distance: 3771, ratio: 31.156661786237194
+
+modelling_PCA.tex (paragraphs) - Levenshtein: distance: 3951, ratio: 26.77631578947368
+
+statistics2.tex (paragraphs) - Levenshtein: distance: 3571, ratio: 37.18533784778448
+
+prime_numbers.tex (paragraphs) - Levenshtein: distance: 3465, ratio: 39.78615644344401
+
+arithmetic_sequences.tex (paragraphs) - Levenshtein: distance: 3459, ratio: 40.191649555099254
+
+fourier.tex (paragraphs) - Levenshtein: distance: 3497, ratio: 38.866052445074416
+
+lagrange.tex (paragraphs) - Levenshtein: distance: 4172, ratio: 20.539568345323744
+
+differential_geometry.tex (paragraphs) - Levenshtein: distance: 3463, ratio: 39.768019884009945
+
+laplace.tex (paragraphs) - Levenshtein: distance: 3918, ratio: 27.741726151849445
+
+polynomials.tex (paragraphs) - Levenshtein: distance: 3411, ratio: 41.13323533342243
+
+convergence_of_series.tex (paragraphs) - Levenshtein: distance: 3355, ratio: 42.48916092833461
+
+combinatorics.tex (paragraphs) - Levenshtein: distance: 3977, ratio: 25.903113034792746
+

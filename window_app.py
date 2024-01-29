@@ -102,6 +102,8 @@ class Left_Panel(CTkFrame):
         title = f"report nr {i}, date: {dt}"
         totalParagraphs = ""
         totalEquations = ""
+        textResultParagraph = ""
+        textResultEquations = ""
         
         for k, v in res.items():
             paragraphs = ""
@@ -146,8 +148,12 @@ class Left_Panel(CTkFrame):
 
             res = "".join([f"<div>{x[0]}</div>" if x else "" for x in v["para"]["reportResults"]]) + ":" + "\n\n"
             totalParagraphs += res + paragraphs + "\n\n"
+            textResultParagraph += "".join([f"{x[0]}" if x else "" for x in v["para"]["reportResults"]]) + "\n\n"
+
             res = "".join([f"<div>{x[0]}</div>" if x else "" for x in v["equa"]["reportResults"]]) + ":" + "\n\n"
             totalEquations += res + equations + "<hr></hr>"
+            textResultEquations += "".join([f"{x[0]}" if x else "" for x in v["equa"]["reportResults"]]) + "\n\n"
+
 
 
         template = template.replace("{{title}}", title)
@@ -155,6 +161,9 @@ class Left_Panel(CTkFrame):
         template = template.replace("{{paragraphs}}", totalParagraphs)
 
         report_variable.set(f"html_reports/report_{dt}_{i}.html")
+
+        with open(f"text_reports/report_{dt}_{i}.txt", "w+") as text_report:
+            text_report.write(textResultEquations + "\n" + textResultParagraph)
 
         with open(f"html_reports/report_{dt}_{i}.html", "w+") as g:
             g.write(template)
