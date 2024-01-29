@@ -11,6 +11,7 @@ import webbrowser
 FILEBASE_FOLDER_DIRECTORY="tex_file_base\\tex"
 TEST_FOLDER_DIRECTORY="files_to_test"
 HTML_REPORT_DIRECTORY="html_reports"
+PLAGIAT_LEVEL_PERCENTAGES={}
 def upload_file_to_base():
     path=filedialog.askopenfilename()
     shutil.copy(path,os.getcwd()+"\\"+FILEBASE_FOLDER_DIRECTORY)
@@ -24,7 +25,7 @@ def select_file_to_check():
     path_variable.set("Selected Article: \n"+path.split("/")[-1])
 
 class Left_Panel(CTkFrame):
-    def __init__(self, master, path_variable,report_variable, **kwargs):
+    def __init__(self, master, path_variable,report_variable,textbox, **kwargs):
         super().__init__(master,**kwargs)
         self.char_method_var=IntVar()
         self.word_method_var=IntVar()
@@ -45,10 +46,10 @@ class Left_Panel(CTkFrame):
         self.cosine_formula_method_checkbox=CTkSwitch(self,text="By Cosine",variable=self.formula_cosine_var).grid(column=0,row=10)
         self.jaccard_formula_method_checkbox=CTkSwitch(self,text="By Jaccard",variable=self.formula_jaccard_var).grid(column=0,row=11)
         self.analyze_methods_padding=CTkFrame(self,height=20,fg_color="transparent").grid(column=0,row=12)
-        self.analyze_button=CTkButton(self,text="Analyze",command=lambda: self.analyze(path_variable,report_variable),corner_radius=32).grid(column=0,row=13,pady=20)
+        self.analyze_button=CTkButton(self,text="Analyze",command=lambda: self.analyze(path_variable,report_variable,textbox),corner_radius=32).grid(column=0,row=13,pady=20)
         self.report_button=CTkButton(self,text="Open Last Report",command=lambda:self.open_report(report_variable),corner_radius=32).grid(column=0,row=14,pady=20)
 
-    def analyze(self, path_variable,report_variable):
+    def analyze(self, path_variable,report_variable,textbox):
         selected_methods=[]
         if(self.char_method_var.get()==1):selected_methods+=[at.AntiPlagarism.test_by_chars]
         if(self.phrase_method_var.get()==1):selected_methods+=[at.AntiPlagarism.test_paragraph_hashes]
@@ -68,6 +69,14 @@ class Left_Panel(CTkFrame):
         listdir = os.listdir(os.path.join("tex_file_base", "tex"))
 
         results = [*zip(listdir, *(antiPlagarism.compare_to_document_base(tested_document, method) for method in selected_methods))]
+
+        
+        raw_text_results=""
+        for test_document, *result in results:
+            raw_text_results+=f"{test_document}:\n"
+            for r in result:
+                raw_text_results+=f"{r['para'].method}: distance: {r['para'].distance}, match_count: {len(r['para'].matched)}, ratio: {r['para'].ratio}\n" #results in raw form
+
 
         res = {}
 
@@ -148,11 +157,11 @@ class Left_Panel(CTkFrame):
 
             res = "".join([f"<div>{x[0]}</div>" if x else "" for x in v["para"]["reportResults"]]) + ":" + "\n\n"
             totalParagraphs += res + paragraphs + "\n\n"
-            textResultParagraph += "".join([f"{x[0]}" if x else "" for x in v["para"]["reportResults"]]) + "\n\n"
+            textResultParagraph += "".join([f"{x[0]} " if x else "" for x in v["para"]["reportResults"]]) + "\n\n"
 
             res = "".join([f"<div>{x[0]}</div>" if x else "" for x in v["equa"]["reportResults"]]) + ":" + "\n\n"
             totalEquations += res + equations + "<hr></hr>"
-            textResultEquations += "".join([f"{x[0]}" if x else "" for x in v["equa"]["reportResults"]]) + "\n\n"
+            textResultEquations += "".join([f"{x[0]} " if x else "" for x in v["equa"]["reportResults"]]) + "\n\n"
 
 
 
@@ -162,9 +171,17 @@ class Left_Panel(CTkFrame):
 
         report_variable.set(f"html_reports/report_{dt}_{i}.html")
 
-        with open(f"text_reports/report_{dt}_{i}.txt", "w+") as text_report:
-            text_report.write(textResultEquations + "\n" + textResultParagraph)
+        with open(f"text_raw_reports/report_{dt}_{i}.txt","w+") as raw_text_report: # raw results saved to file
+            raw_text_report.write(raw_text_results)
 
+        text_results="Paragraphs:\n"+textResultParagraph + "\n" +"Equations:\n" +textResultEquations # results by Kris
+
+        textbox.delete("0.0", "end")
+        textbox.insert("0.0", text_results) # textbox clear and write
+
+        with open(f"text_reports/report_{dt}_{i}.txt", "w+") as text_report:
+            text_report.write(text_results)
+        
         with open(f"html_reports/report_{dt}_{i}.html", "w+") as g:
             g.write(template)
             i += 1
@@ -186,10 +203,11 @@ path_variable.set("Selected Article:")
 report_variable=StringVar()
 report_variable.set("")
 print(report_variable.get())
-left_panel=Left_Panel(window,path_variable,report_variable,height=400,width=200).grid(column=0,rowspan=20)
 window.title("LaTeX AntiPlagarism App")
 set_appearance_mode('dark')
 left_mid_padding=CTkFrame(window,width=20,height=0,fg_color="transparent").grid(column=1,row=0)
 result_label=CTkLabel(window,text="Results:").grid(column=4,row=0)
-result_box=CTkTextbox(window,height=400,width=400).grid(column=4,row=1,rowspan=13,padx=20)
+result_box=CTkTextbox(window,height=400,width=400)
+result_box.grid(column=4,row=1,rowspan=13,padx=20)
+left_panel=Left_Panel(window,path_variable,report_variable,result_box,height=400,width=200).grid(column=0,row=0,rowspan=20)
 window.mainloop()

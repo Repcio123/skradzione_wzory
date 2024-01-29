@@ -1,0 +1,216 @@
+AI.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1217, match_count: 361, ratio: 43.77307821416583
+cosine: distance: nan, match_count: 0, ratio: 50.15362118348677
+analityc_geometry.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1554, match_count: 471, ratio: 42.336913806654444
+cosine: distance: nan, match_count: 0, ratio: 54.62465564007851
+approximate_system_of_equations.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1592, match_count: 468, ratio: 43.993839835728956
+cosine: distance: nan, match_count: 0, ratio: 57.1997076391243
+arithmetic_sequences.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1693, match_count: 480, ratio: 43.489004200642455
+cosine: distance: nan, match_count: 0, ratio: 61.9697233102919
+combinatorics.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 2241, match_count: 560, ratio: 41.330265634804434
+cosine: distance: nan, match_count: 0, ratio: 63.80277994133869
+complex_numbers.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1285, match_count: 378, ratio: 43.30150908530952
+cosine: distance: nan, match_count: 0, ratio: 51.04092205381133
+compoung_percentage.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1351, match_count: 346, ratio: 35.8246609902239
+cosine: distance: nan, match_count: 0, ratio: 8.305407209875137
+convergence_of_series.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1955, match_count: 549, ratio: 42.921754862053376
+cosine: distance: nan, match_count: 0, ratio: 66.58889989016201
+differential_geometry.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1255, match_count: 390, ratio: 43.23640960809102
+cosine: distance: nan, match_count: 0, ratio: 54.65642163710818
+dummy_PCA.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1249, match_count: 310, ratio: 37.55528749497387
+cosine: distance: nan, match_count: 0, ratio: 39.607178127877916
+fibonacci.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1377, match_count: 319, ratio: 34.56407074154515
+cosine: distance: nan, match_count: 0, ratio: 1.3838552406755957
+fourier.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1831, match_count: 551, ratio: 43.119698397737984
+cosine: distance: nan, match_count: 0, ratio: 59.80701011261033
+fractals.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1593, match_count: 410, ratio: 35.91415376256452
+cosine: distance: nan, match_count: 0, ratio: 4.44276857524436
+function_limits.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1827, match_count: 540, ratio: 42.72577222353219
+cosine: distance: nan, match_count: 0, ratio: 63.866983749695464
+geometric_sequences.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1637, match_count: 474, ratio: 43.951612903225815
+cosine: distance: nan, match_count: 0, ratio: 62.092532296186846
+graphs.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1582, match_count: 387, ratio: 34.61538461538461
+cosine: distance: nan, match_count: 0, ratio: 7.7371358313296525
+lagrange.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1613, match_count: 460, ratio: 46.0960960960961
+cosine: distance: nan, match_count: 0, ratio: 56.49006284372638
+laplace.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1777, match_count: 517, ratio: 43.53025591963645
+cosine: distance: nan, match_count: 0, ratio: 59.153393637282804
+laplace_partial.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1506, match_count: 448, ratio: 43.94381129075007
+cosine: distance: nan, match_count: 0, ratio: 57.86431847661527
+logarithms.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1641, match_count: 501, ratio: 44.48938321536906
+cosine: distance: nan, match_count: 0, ratio: 62.786369110167854
+LU_matrix_factorization.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1610, match_count: 410, ratio: 35.488233703002436
+cosine: distance: nan, match_count: 0, ratio: 3.0169642440735127
+main1.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1613, match_count: 503, ratio: 42.492339121552604
+cosine: distance: nan, match_count: 0, ratio: 61.08371713812429
+main2.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1241, match_count: 352, ratio: 38.508425959125134
+cosine: distance: nan, match_count: 0, ratio: 34.48550953962426
+main3.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1680, match_count: 513, ratio: 43.13725490196079
+cosine: distance: nan, match_count: 0, ratio: 49.11165917175353
+main4.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1322, match_count: 406, ratio: 42.377414561664196
+cosine: distance: nan, match_count: 0, ratio: 52.27382282203733
+main4_partial.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1205, match_count: 365, ratio: 41.65517241379311
+cosine: distance: nan, match_count: 0, ratio: 49.94647218464744
+matrix_multiplication.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1709, match_count: 486, ratio: 36.27930945632569
+cosine: distance: nan, match_count: 0, ratio: 4.907511417958981
+modeling.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 2938, match_count: 664, ratio: 38.180515759312314
+cosine: distance: nan, match_count: 0, ratio: 57.93428629297531
+modelling_PCA.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 3679, match_count: 739, ratio: 34.98360143682648
+cosine: distance: nan, match_count: 0, ratio: 59.496378301255554
+newton_equation.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1443, match_count: 360, ratio: 35.93060864451631
+cosine: distance: nan, match_count: 0, ratio: 1.9277821446197922
+nonlinear_systems_of_equations.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 2173, match_count: 563, ratio: 42.69949066213922
+cosine: distance: nan, match_count: 0, ratio: 59.34062493659737
+notice.txt:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1596, match_count: 472, ratio: 44.046094750320094
+cosine: distance: nan, match_count: 0, ratio: 55.84197864255491
+number_intervals.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1955, match_count: 567, ratio: 40.22140221402214
+cosine: distance: nan, match_count: 0, ratio: 56.785621553375165
+number_systems.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1422, match_count: 360, ratio: 35.42347696879643
+cosine: distance: nan, match_count: 0, ratio: 5.131212242256168
+number_theory.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1544, match_count: 463, ratio: 44.4790854767472
+cosine: distance: nan, match_count: 0, ratio: 55.93475719311351
+numerical_integration.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 2194, match_count: 595, ratio: 41.301573798383664
+cosine: distance: nan, match_count: 0, ratio: 60.79278047181233
+numeric_integrals.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1734, match_count: 458, ratio: 35.03348789283874
+cosine: distance: nan, match_count: 0, ratio: 2.223525304977673
+num_int.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 2596, match_count: 676, ratio: 39.57692307692307
+cosine: distance: nan, match_count: 0, ratio: 61.562367192404956
+optimization.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1783, match_count: 513, ratio: 43.85588165115725
+cosine: distance: nan, match_count: 0, ratio: 65.85949503428593
+polynomials.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1466, match_count: 443, ratio: 44.25395124564693
+cosine: distance: nan, match_count: 0, ratio: 54.23552440970872
+prime_numbers.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1318, match_count: 340, ratio: 35.20105471324983
+cosine: distance: nan, match_count: 0, ratio: 9.243606094311398
+property_of_the_circle.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1349, match_count: 329, ratio: 35.08997429305912
+cosine: distance: nan, match_count: 0, ratio: 5.159434579064155
+prop_of_right-angles_triangle.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1330, match_count: 344, ratio: 34.90412739681508
+cosine: distance: nan, match_count: 0, ratio: 8.985519009353471
+quadratic_equatation.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 2547, match_count: 637, ratio: 38.21456538762725
+cosine: distance: nan, match_count: 0, ratio: 53.67170454350117
+queue.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1899, match_count: 547, ratio: 43.97260273972603
+cosine: distance: nan, match_count: 0, ratio: 57.09187033550112
+rational_expressions.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1212, match_count: 379, ratio: 42.943956785955436
+cosine: distance: nan, match_count: 0, ratio: 59.670772246017194
+RW1.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1268, match_count: 274, ratio: 36.8398079441292
+cosine: distance: nan, match_count: 0, ratio: 51.76419412814383
+RW2.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1175, match_count: 347, ratio: 44.84181568088032
+cosine: distance: nan, match_count: 0, ratio: 65.2117166109435
+RW3.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1265, match_count: 347, ratio: 41.666666666666664
+cosine: distance: nan, match_count: 0, ratio: 49.52543151927408
+statistics.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 2587, match_count: 633, ratio: 38.64472410454985
+cosine: distance: nan, match_count: 0, ratio: 56.96911300423848
+statistics2.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 2109, match_count: 567, ratio: 42.96487825899591
+cosine: distance: nan, match_count: 0, ratio: 52.99647627918774
+systems_of_equations.tex:
+content hashes: distance: 0, match_count: 1, ratio: 100.0
+Levenshtein: distance: 0, match_count: 2, ratio: 100.0
+cosine: distance: nan, match_count: 0, ratio: 100.00000000000001
+taylor_series.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1342, match_count: 315, ratio: 35.168393782383426
+cosine: distance: nan, match_count: 0, ratio: 4.58565891524076
+trigonometry.tex:
+content hashes: distance: 1670, match_count: 0, ratio: 0
+Levenshtein: distance: 1315, match_count: 304, ratio: 32.438831886345696
+cosine: distance: nan, match_count: 0, ratio: 2.7151823034599873
