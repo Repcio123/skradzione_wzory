@@ -1,0 +1,766 @@
+AI.tex:
+compare chars (paragraphs): distance: nan, match_count: 4, ratio: 43.77307821416583
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1217, match_count: 361, ratio: 43.77307821416583
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 50.15362118348677
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 50.15362118348677
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+analityc_geometry.tex:
+compare chars (paragraphs): distance: nan, match_count: 4, ratio: 42.336913806654444
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1554, match_count: 471, ratio: 42.336913806654444
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 54.62465564007851
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 54.62465564007851
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+approximate_system_of_equations.tex:
+compare chars (paragraphs): distance: nan, match_count: 8, ratio: 43.993839835728956
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1592, match_count: 468, ratio: 43.993839835728956
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 57.1997076391243
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 57.1997076391243
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+arithmetic_sequences.tex:
+compare chars (paragraphs): distance: nan, match_count: 8, ratio: 43.489004200642455
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1693, match_count: 480, ratio: 43.489004200642455
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 61.9697233102919
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 61.9697233102919
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+combinatorics.tex:
+compare chars (paragraphs): distance: nan, match_count: 10, ratio: 41.330265634804434
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 2241, match_count: 560, ratio: 41.330265634804434
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 63.80277994133869
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 63.80277994133869
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+complex_numbers.tex:
+compare chars (paragraphs): distance: nan, match_count: 4, ratio: 43.30150908530952
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1285, match_count: 378, ratio: 43.30150908530952
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 51.04092205381133
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 51.04092205381133
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+compoung_percentage.tex:
+compare chars (paragraphs): distance: nan, match_count: 1, ratio: 35.8246609902239
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1351, match_count: 346, ratio: 35.8246609902239
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 8.305407209875137
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 8.305407209875137
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+convergence_of_series.tex:
+compare chars (paragraphs): distance: nan, match_count: 9, ratio: 42.921754862053376
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1955, match_count: 549, ratio: 42.921754862053376
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 66.58889989016201
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 66.58889989016201
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+differential_geometry.tex:
+compare chars (paragraphs): distance: nan, match_count: 3, ratio: 43.23640960809102
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1255, match_count: 390, ratio: 43.23640960809102
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 54.65642163710818
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 54.65642163710818
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+dummy_PCA.tex:
+compare chars (paragraphs): distance: nan, match_count: 1, ratio: 37.55528749497387
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1249, match_count: 310, ratio: 37.55528749497387
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 39.607178127877916
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 39.607178127877916
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+fibonacci.tex:
+compare chars (paragraphs): distance: nan, match_count: 1, ratio: 34.56407074154515
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1377, match_count: 319, ratio: 34.56407074154515
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 1.3838552406755957
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 1.3838552406755957
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+fourier.tex:
+compare chars (paragraphs): distance: nan, match_count: 7, ratio: 43.119698397737984
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1831, match_count: 551, ratio: 43.119698397737984
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 59.80701011261033
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 59.80701011261033
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+fractals.tex:
+compare chars (paragraphs): distance: nan, match_count: 1, ratio: 35.91415376256452
+compare chars (equations): distance: nan, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1593, match_count: 410, ratio: 35.91415376256452
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 4.44276857524436
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 4.44276857524436
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+function_limits.tex:
+compare chars (paragraphs): distance: nan, match_count: 7, ratio: 42.72577222353219
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1827, match_count: 540, ratio: 42.72577222353219
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 63.866983749695464
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 63.866983749695464
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+geometric_sequences.tex:
+compare chars (paragraphs): distance: nan, match_count: 6, ratio: 43.951612903225815
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1637, match_count: 474, ratio: 43.951612903225815
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 62.092532296186846
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 62.092532296186846
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+graphs.tex:
+compare chars (paragraphs): distance: nan, match_count: 1, ratio: 34.61538461538461
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1582, match_count: 387, ratio: 34.61538461538461
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 7.7371358313296525
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 7.7371358313296525
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+lagrange.tex:
+compare chars (paragraphs): distance: nan, match_count: 11, ratio: 46.0960960960961
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1613, match_count: 460, ratio: 46.0960960960961
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 56.49006284372638
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 56.49006284372638
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+laplace.tex:
+compare chars (paragraphs): distance: nan, match_count: 8, ratio: 43.53025591963645
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1777, match_count: 517, ratio: 43.53025591963645
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 59.153393637282804
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 59.153393637282804
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+laplace_partial.tex:
+compare chars (paragraphs): distance: nan, match_count: 4, ratio: 43.94381129075007
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1506, match_count: 448, ratio: 43.94381129075007
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 57.86431847661527
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 57.86431847661527
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+logarithms.tex:
+compare chars (paragraphs): distance: nan, match_count: 5, ratio: 44.48938321536906
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1641, match_count: 501, ratio: 44.48938321536906
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 62.786369110167854
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 62.786369110167854
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+LU_matrix_factorization.tex:
+compare chars (paragraphs): distance: nan, match_count: 1, ratio: 35.488233703002436
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1610, match_count: 410, ratio: 35.488233703002436
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 3.0169642440735127
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 3.0169642440735127
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+main1.tex:
+compare chars (paragraphs): distance: nan, match_count: 5, ratio: 42.492339121552604
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1613, match_count: 503, ratio: 42.492339121552604
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 61.08371713812429
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 61.08371713812429
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+main2.tex:
+compare chars (paragraphs): distance: nan, match_count: 1, ratio: 38.508425959125134
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1241, match_count: 352, ratio: 38.508425959125134
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 34.48550953962426
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 34.48550953962426
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+main3.tex:
+compare chars (paragraphs): distance: nan, match_count: 4, ratio: 43.13725490196079
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1680, match_count: 513, ratio: 43.13725490196079
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 49.11165917175353
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 49.11165917175353
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+main4.tex:
+compare chars (paragraphs): distance: nan, match_count: 2, ratio: 42.377414561664196
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1322, match_count: 406, ratio: 42.377414561664196
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 52.27382282203733
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 52.27382282203733
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+main4_partial.tex:
+compare chars (paragraphs): distance: nan, match_count: 3, ratio: 41.65517241379311
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1205, match_count: 365, ratio: 41.65517241379311
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 49.94647218464744
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 49.94647218464744
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+matrix_multiplication.tex:
+compare chars (paragraphs): distance: nan, match_count: 1, ratio: 36.27930945632569
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1709, match_count: 486, ratio: 36.27930945632569
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 4.907511417958981
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 4.907511417958981
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+modeling.tex:
+compare chars (paragraphs): distance: nan, match_count: 7, ratio: 38.180515759312314
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 2938, match_count: 664, ratio: 38.180515759312314
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 57.93428629297531
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 57.93428629297531
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+modelling_PCA.tex:
+compare chars (paragraphs): distance: nan, match_count: 6, ratio: 34.98360143682648
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 3679, match_count: 739, ratio: 34.98360143682648
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 59.496378301255554
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 59.496378301255554
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+newton_equation.tex:
+compare chars (paragraphs): distance: nan, match_count: 1, ratio: 35.93060864451631
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1443, match_count: 360, ratio: 35.93060864451631
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 1.9277821446197922
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 1.9277821446197922
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+nonlinear_systems_of_equations.tex:
+compare chars (paragraphs): distance: nan, match_count: 13, ratio: 42.69949066213922
+compare chars (equations): distance: nan, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 2173, match_count: 563, ratio: 42.69949066213922
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 59.34062493659737
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 59.34062493659737
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+notice.txt:
+compare chars (paragraphs): distance: nan, match_count: 6, ratio: 44.046094750320094
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1596, match_count: 472, ratio: 44.046094750320094
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 55.84197864255491
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 55.84197864255491
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+number_intervals.tex:
+compare chars (paragraphs): distance: nan, match_count: 5, ratio: 40.22140221402214
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1955, match_count: 567, ratio: 40.22140221402214
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 56.785621553375165
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 56.785621553375165
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+number_systems.tex:
+compare chars (paragraphs): distance: nan, match_count: 1, ratio: 35.42347696879643
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1422, match_count: 360, ratio: 35.42347696879643
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 5.131212242256168
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 5.131212242256168
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+number_theory.tex:
+compare chars (paragraphs): distance: nan, match_count: 5, ratio: 44.4790854767472
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1544, match_count: 463, ratio: 44.4790854767472
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 55.93475719311351
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 55.93475719311351
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+numerical_integration.tex:
+compare chars (paragraphs): distance: nan, match_count: 7, ratio: 41.301573798383664
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 2194, match_count: 595, ratio: 41.301573798383664
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 60.79278047181233
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 60.79278047181233
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+numeric_integrals.tex:
+compare chars (paragraphs): distance: nan, match_count: 1, ratio: 35.03348789283874
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1734, match_count: 458, ratio: 35.03348789283874
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 2.223525304977673
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 2.223525304977673
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+num_int.tex:
+compare chars (paragraphs): distance: nan, match_count: 7, ratio: 39.57692307692307
+compare chars (equations): distance: nan, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 2596, match_count: 676, ratio: 39.57692307692307
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 61.562367192404956
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 61.562367192404956
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+optimization.tex:
+compare chars (paragraphs): distance: nan, match_count: 7, ratio: 43.85588165115725
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1783, match_count: 513, ratio: 43.85588165115725
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 65.85949503428593
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 65.85949503428593
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+polynomials.tex:
+compare chars (paragraphs): distance: nan, match_count: 7, ratio: 44.25395124564693
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1466, match_count: 443, ratio: 44.25395124564693
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 54.23552440970872
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 54.23552440970872
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+prime_numbers.tex:
+compare chars (paragraphs): distance: nan, match_count: 1, ratio: 35.20105471324983
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1318, match_count: 340, ratio: 35.20105471324983
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 9.243606094311398
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 9.243606094311398
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+property_of_the_circle.tex:
+compare chars (paragraphs): distance: nan, match_count: 1, ratio: 35.08997429305912
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1349, match_count: 329, ratio: 35.08997429305912
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 5.159434579064155
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 5.159434579064155
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+prop_of_right-angles_triangle.tex:
+compare chars (paragraphs): distance: nan, match_count: 1, ratio: 34.90412739681508
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1330, match_count: 344, ratio: 34.90412739681508
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 8.985519009353471
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 8.985519009353471
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+quadratic_equatation.tex:
+compare chars (paragraphs): distance: nan, match_count: 2, ratio: 38.21456538762725
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 2547, match_count: 637, ratio: 38.21456538762725
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 53.67170454350117
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 53.67170454350117
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+queue.tex:
+compare chars (paragraphs): distance: nan, match_count: 9, ratio: 43.97260273972603
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1899, match_count: 547, ratio: 43.97260273972603
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 57.09187033550112
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 57.09187033550112
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+rational_expressions.tex:
+compare chars (paragraphs): distance: nan, match_count: 2, ratio: 42.943956785955436
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1212, match_count: 379, ratio: 42.943956785955436
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 59.670772246017194
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 59.670772246017194
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+RW1.tex:
+compare chars (paragraphs): distance: nan, match_count: 2, ratio: 36.8398079441292
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1268, match_count: 274, ratio: 36.8398079441292
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 51.76419412814383
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 51.76419412814383
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+RW2.tex:
+compare chars (paragraphs): distance: nan, match_count: 3, ratio: 44.84181568088032
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1175, match_count: 347, ratio: 44.84181568088032
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 65.2117166109435
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 65.2117166109435
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+RW3.tex:
+compare chars (paragraphs): distance: nan, match_count: 2, ratio: 41.666666666666664
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1265, match_count: 347, ratio: 41.666666666666664
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 49.52543151927408
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 49.52543151927408
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+statistics.tex:
+compare chars (paragraphs): distance: nan, match_count: 5, ratio: 38.64472410454985
+compare chars (equations): distance: nan, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 2587, match_count: 633, ratio: 38.64472410454985
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 56.96911300423848
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 56.96911300423848
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+statistics2.tex:
+compare chars (paragraphs): distance: nan, match_count: 11, ratio: 42.96487825899591
+compare chars (equations): distance: nan, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 2109, match_count: 567, ratio: 42.96487825899591
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 52.99647627918774
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 52.99647627918774
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+systems_of_equations.tex:
+compare chars (paragraphs): distance: nan, match_count: 2, ratio: 100.0
+High suspicions of plagarism
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 4, match_count: 5, ratio: 99.76047904191617
+High suspicions of plagarism
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 0, match_count: 1670, ratio: 1
+content hashes (equations): distance: 0, match_count: 0, ratio: 1
+Levenshtein (paragraphs): distance: 0, match_count: 2, ratio: 100.0
+High suspicions of plagarism
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 100.00000000000001
+High suspicions of plagarism
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 100.00000000000001
+High suspicions of plagarism
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+taylor_series.tex:
+compare chars (paragraphs): distance: nan, match_count: 1, ratio: 35.168393782383426
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1342, match_count: 315, ratio: 35.168393782383426
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 4.58565891524076
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 4.58565891524076
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0
+trigonometry.tex:
+compare chars (paragraphs): distance: nan, match_count: 1, ratio: 32.438831886345696
+compare chars (equations): distance: nan, match_count: 1, ratio: 0.0
+compare_paragraph_hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+compare_paragraph_hashes (equations): distance: 0, match_count: 0, ratio: 0
+content hashes (paragraphs): distance: 1670, match_count: 0, ratio: 0
+content hashes (equations): distance: 1670, match_count: 1, ratio: 0.0
+Levenshtein (paragraphs): distance: 1315, match_count: 304, ratio: 32.438831886345696
+Levenshtein (equations): distance: 0, match_count: 1, ratio: 100.0
+High suspicions of plagarism
+cosine (paragraphs): distance: nan, match_count: 0, ratio: 2.7151823034599873
+cosine (equations): distance: nan, match_count: 0, ratio: 0.0
+jaccard (paragraphs): distance: nan, match_count: 0, ratio: 2.7151823034599873
+jaccard (equations): distance: nan, match_count: 0, ratio: 0.0

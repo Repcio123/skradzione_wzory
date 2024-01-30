@@ -202,7 +202,7 @@ class Left_Panel(CTkFrame):
         text_results="Paragraphs:\n"+textResultParagraph + "\n" +"Equations:\n" +textResultEquations # results by Kris
 
         textbox.delete("0.0", "end")
-        textbox.insert("0.0", text_results) # textbox clear and write
+        textbox.insert("0.0", raw_text_results) # textbox clear and write
 
         with open(f"text_reports/report_{dt}_{i}.txt", "w+") as text_report:
             text_report.write(text_results)

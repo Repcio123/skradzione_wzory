@@ -1,0 +1,171 @@
+Paragraphs:
+AI.tex (paragraphs) - compare chars: distance: nan, ratio: 43.77307821416583 AI.tex (paragraphs) - Levenshtein: distance: 1217, ratio: 43.77307821416583 
+
+analityc_geometry.tex (paragraphs) - compare chars: distance: nan, ratio: 42.336913806654444 analityc_geometry.tex (paragraphs) - Levenshtein: distance: 1554, ratio: 42.336913806654444 
+
+approximate_system_of_equations.tex (paragraphs) - compare chars: distance: nan, ratio: 43.993839835728956 approximate_system_of_equations.tex (paragraphs) - Levenshtein: distance: 1592, ratio: 43.993839835728956 
+
+arithmetic_sequences.tex (paragraphs) - compare chars: distance: nan, ratio: 43.489004200642455 arithmetic_sequences.tex (paragraphs) - Levenshtein: distance: 1693, ratio: 43.489004200642455 
+
+combinatorics.tex (paragraphs) - compare chars: distance: nan, ratio: 41.330265634804434 combinatorics.tex (paragraphs) - Levenshtein: distance: 2241, ratio: 41.330265634804434 
+
+complex_numbers.tex (paragraphs) - compare chars: distance: nan, ratio: 43.30150908530952 complex_numbers.tex (paragraphs) - Levenshtein: distance: 1285, ratio: 43.30150908530952 
+
+compoung_percentage.tex (paragraphs) - compare chars: distance: nan, ratio: 35.8246609902239 compoung_percentage.tex (paragraphs) - Levenshtein: distance: 1351, ratio: 35.8246609902239 
+
+convergence_of_series.tex (paragraphs) - compare chars: distance: nan, ratio: 42.921754862053376 convergence_of_series.tex (paragraphs) - Levenshtein: distance: 1955, ratio: 42.921754862053376 
+
+differential_geometry.tex (paragraphs) - compare chars: distance: nan, ratio: 43.23640960809102 differential_geometry.tex (paragraphs) - Levenshtein: distance: 1255, ratio: 43.23640960809102 
+
+dummy_PCA.tex (paragraphs) - compare chars: distance: nan, ratio: 37.55528749497387 dummy_PCA.tex (paragraphs) - Levenshtein: distance: 1249, ratio: 37.55528749497387 
+
+fibonacci.tex (paragraphs) - compare chars: distance: nan, ratio: 34.56407074154515 fibonacci.tex (paragraphs) - Levenshtein: distance: 1377, ratio: 34.56407074154515 
+
+fourier.tex (paragraphs) - compare chars: distance: nan, ratio: 43.119698397737984 fourier.tex (paragraphs) - Levenshtein: distance: 1831, ratio: 43.119698397737984 
+
+fractals.tex (paragraphs) - compare chars: distance: nan, ratio: 35.91415376256452 fractals.tex (paragraphs) - Levenshtein: distance: 1593, ratio: 35.91415376256452 
+
+function_limits.tex (paragraphs) - compare chars: distance: nan, ratio: 42.72577222353219 function_limits.tex (paragraphs) - Levenshtein: distance: 1827, ratio: 42.72577222353219 
+
+geometric_sequences.tex (paragraphs) - compare chars: distance: nan, ratio: 43.951612903225815 geometric_sequences.tex (paragraphs) - Levenshtein: distance: 1637, ratio: 43.951612903225815 
+
+graphs.tex (paragraphs) - compare chars: distance: nan, ratio: 34.61538461538461 graphs.tex (paragraphs) - Levenshtein: distance: 1582, ratio: 34.61538461538461 
+
+lagrange.tex (paragraphs) - compare chars: distance: nan, ratio: 46.0960960960961 lagrange.tex (paragraphs) - Levenshtein: distance: 1613, ratio: 46.0960960960961 
+
+laplace.tex (paragraphs) - compare chars: distance: nan, ratio: 43.53025591963645 laplace.tex (paragraphs) - Levenshtein: distance: 1777, ratio: 43.53025591963645 
+
+laplace_partial.tex (paragraphs) - compare chars: distance: nan, ratio: 43.94381129075007 laplace_partial.tex (paragraphs) - Levenshtein: distance: 1506, ratio: 43.94381129075007 
+
+logarithms.tex (paragraphs) - compare chars: distance: nan, ratio: 44.48938321536906 logarithms.tex (paragraphs) - Levenshtein: distance: 1641, ratio: 44.48938321536906 
+
+LU_matrix_factorization.tex (paragraphs) - compare chars: distance: nan, ratio: 35.488233703002436 LU_matrix_factorization.tex (paragraphs) - Levenshtein: distance: 1610, ratio: 35.488233703002436 
+
+main1.tex (paragraphs) - compare chars: distance: nan, ratio: 42.492339121552604 main1.tex (paragraphs) - Levenshtein: distance: 1613, ratio: 42.492339121552604 
+
+main2.tex (paragraphs) - compare chars: distance: nan, ratio: 38.508425959125134 main2.tex (paragraphs) - Levenshtein: distance: 1241, ratio: 38.508425959125134 
+
+main3.tex (paragraphs) - compare chars: distance: nan, ratio: 43.13725490196079 main3.tex (paragraphs) - Levenshtein: distance: 1680, ratio: 43.13725490196079 
+
+main4.tex (paragraphs) - compare chars: distance: nan, ratio: 42.377414561664196 main4.tex (paragraphs) - Levenshtein: distance: 1322, ratio: 42.377414561664196 
+
+main4_partial.tex (paragraphs) - compare chars: distance: nan, ratio: 41.65517241379311 main4_partial.tex (paragraphs) - Levenshtein: distance: 1205, ratio: 41.65517241379311 
+
+matrix_multiplication.tex (paragraphs) - compare chars: distance: nan, ratio: 36.27930945632569 matrix_multiplication.tex (paragraphs) - Levenshtein: distance: 1709, ratio: 36.27930945632569 
+
+modeling.tex (paragraphs) - compare chars: distance: nan, ratio: 38.180515759312314 modeling.tex (paragraphs) - Levenshtein: distance: 2938, ratio: 38.180515759312314 
+
+modelling_PCA.tex (paragraphs) - compare chars: distance: nan, ratio: 34.98360143682648 modelling_PCA.tex (paragraphs) - Levenshtein: distance: 3679, ratio: 34.98360143682648 
+
+newton_equation.tex (paragraphs) - compare chars: distance: nan, ratio: 35.93060864451631 newton_equation.tex (paragraphs) - Levenshtein: distance: 1443, ratio: 35.93060864451631 
+
+nonlinear_systems_of_equations.tex (paragraphs) - compare chars: distance: nan, ratio: 42.69949066213922 nonlinear_systems_of_equations.tex (paragraphs) - Levenshtein: distance: 2173, ratio: 42.69949066213922 
+
+number_intervals.tex (paragraphs) - compare chars: distance: nan, ratio: 40.22140221402214 number_intervals.tex (paragraphs) - Levenshtein: distance: 1955, ratio: 40.22140221402214 
+
+number_systems.tex (paragraphs) - compare chars: distance: nan, ratio: 35.42347696879643 number_systems.tex (paragraphs) - Levenshtein: distance: 1422, ratio: 35.42347696879643 
+
+numerical_integration.tex (paragraphs) - compare chars: distance: nan, ratio: 41.301573798383664 numerical_integration.tex (paragraphs) - Levenshtein: distance: 2194, ratio: 41.301573798383664 
+
+numeric_integrals.tex (paragraphs) - compare chars: distance: nan, ratio: 35.03348789283874 numeric_integrals.tex (paragraphs) - Levenshtein: distance: 1734, ratio: 35.03348789283874 
+
+prime_numbers.tex (paragraphs) - compare chars: distance: nan, ratio: 35.20105471324983 prime_numbers.tex (paragraphs) - Levenshtein: distance: 1318, ratio: 35.20105471324983 
+
+prop_of_right-angles_triangle.tex (paragraphs) - compare chars: distance: nan, ratio: 34.90412739681508 prop_of_right-angles_triangle.tex (paragraphs) - Levenshtein: distance: 1330, ratio: 34.90412739681508 
+
+RW1.tex (paragraphs) - compare chars: distance: nan, ratio: 36.8398079441292 RW1.tex (paragraphs) - Levenshtein: distance: 1268, ratio: 36.8398079441292 
+
+RW2.tex (paragraphs) - compare chars: distance: nan, ratio: 44.84181568088032 RW2.tex (paragraphs) - Levenshtein: distance: 1175, ratio: 44.84181568088032 
+
+statistics.tex (paragraphs) - compare chars: distance: nan, ratio: 38.64472410454985 statistics.tex (paragraphs) - Levenshtein: distance: 2587, ratio: 38.64472410454985 
+
+taylor_series.tex (paragraphs) - compare chars: distance: nan, ratio: 35.168393782383426 taylor_series.tex (paragraphs) - Levenshtein: distance: 1342, ratio: 35.168393782383426 
+
+trigonometry.tex (paragraphs) - compare chars: distance: nan, ratio: 32.438831886345696 trigonometry.tex (paragraphs) - Levenshtein: distance: 1315, ratio: 32.438831886345696 
+
+
+Equations:
+AI.tex - compare chars: distance: nan, ratio: 0.0 AI.tex - content hashes: distance: 1670, ratio: 0.0 AI.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+analityc_geometry.tex - compare chars: distance: nan, ratio: 0.0 analityc_geometry.tex - content hashes: distance: 1670, ratio: 0.0 analityc_geometry.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+approximate_system_of_equations.tex - compare chars: distance: nan, ratio: 0.0 approximate_system_of_equations.tex - content hashes: distance: 1670, ratio: 0.0 approximate_system_of_equations.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+arithmetic_sequences.tex - compare chars: distance: nan, ratio: 0.0 arithmetic_sequences.tex - content hashes: distance: 1670, ratio: 0.0 arithmetic_sequences.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+combinatorics.tex - compare chars: distance: nan, ratio: 0.0 combinatorics.tex - content hashes: distance: 1670, ratio: 0.0 combinatorics.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+complex_numbers.tex - compare chars: distance: nan, ratio: 0.0 complex_numbers.tex - content hashes: distance: 1670, ratio: 0.0 complex_numbers.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+compoung_percentage.tex - compare chars: distance: nan, ratio: 0.0 compoung_percentage.tex - content hashes: distance: 1670, ratio: 0.0 compoung_percentage.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+convergence_of_series.tex - compare chars: distance: nan, ratio: 0.0 convergence_of_series.tex - content hashes: distance: 1670, ratio: 0.0 convergence_of_series.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+differential_geometry.tex - compare chars: distance: nan, ratio: 0.0 differential_geometry.tex - content hashes: distance: 1670, ratio: 0.0 differential_geometry.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+dummy_PCA.tex - compare chars: distance: nan, ratio: 0.0 dummy_PCA.tex - content hashes: distance: 1670, ratio: 0.0 dummy_PCA.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+fibonacci.tex - compare chars: distance: nan, ratio: 0.0 fibonacci.tex - content hashes: distance: 1670, ratio: 0.0 fibonacci.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+fourier.tex - compare chars: distance: nan, ratio: 0.0 fourier.tex - content hashes: distance: 1670, ratio: 0.0 fourier.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+fractals.tex - compare chars: distance: nan, ratio: 100.0 fractals.tex - content hashes: distance: 1670, ratio: 0.0 fractals.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+function_limits.tex - compare chars: distance: nan, ratio: 0.0 function_limits.tex - content hashes: distance: 1670, ratio: 0.0 function_limits.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+geometric_sequences.tex - compare chars: distance: nan, ratio: 0.0 geometric_sequences.tex - content hashes: distance: 1670, ratio: 0.0 geometric_sequences.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+graphs.tex - compare chars: distance: nan, ratio: 0.0 graphs.tex - content hashes: distance: 1670, ratio: 0.0 graphs.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+lagrange.tex - compare chars: distance: nan, ratio: 0.0 lagrange.tex - content hashes: distance: 1670, ratio: 0.0 lagrange.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+laplace.tex - compare chars: distance: nan, ratio: 0.0 laplace.tex - content hashes: distance: 1670, ratio: 0.0 laplace.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+laplace_partial.tex - compare chars: distance: nan, ratio: 0.0 laplace_partial.tex - content hashes: distance: 1670, ratio: 0.0 laplace_partial.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+logarithms.tex - compare chars: distance: nan, ratio: 0.0 logarithms.tex - content hashes: distance: 1670, ratio: 0.0 logarithms.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+LU_matrix_factorization.tex - compare chars: distance: nan, ratio: 0.0 LU_matrix_factorization.tex - content hashes: distance: 1670, ratio: 0.0 LU_matrix_factorization.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+main1.tex - compare chars: distance: nan, ratio: 0.0 main1.tex - content hashes: distance: 1670, ratio: 0.0 main1.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+main2.tex - compare chars: distance: nan, ratio: 0.0 main2.tex - content hashes: distance: 1670, ratio: 0.0 main2.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+main3.tex - compare chars: distance: nan, ratio: 0.0 main3.tex - content hashes: distance: 1670, ratio: 0.0 main3.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+main4.tex - compare chars: distance: nan, ratio: 0.0 main4.tex - content hashes: distance: 1670, ratio: 0.0 main4.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+main4_partial.tex - compare chars: distance: nan, ratio: 0.0 main4_partial.tex - content hashes: distance: 1670, ratio: 0.0 main4_partial.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+matrix_multiplication.tex - compare chars: distance: nan, ratio: 0.0 matrix_multiplication.tex - content hashes: distance: 1670, ratio: 0.0 matrix_multiplication.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+modeling.tex - compare chars: distance: nan, ratio: 0.0 modeling.tex - content hashes: distance: 1670, ratio: 0.0 modeling.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+modelling_PCA.tex - compare chars: distance: nan, ratio: 0.0 modelling_PCA.tex - content hashes: distance: 1670, ratio: 0.0 modelling_PCA.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+newton_equation.tex - compare chars: distance: nan, ratio: 0.0 newton_equation.tex - content hashes: distance: 1670, ratio: 0.0 newton_equation.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+nonlinear_systems_of_equations.tex - compare chars: distance: nan, ratio: 100.0 nonlinear_systems_of_equations.tex - content hashes: distance: 1670, ratio: 0.0 nonlinear_systems_of_equations.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+number_intervals.tex - compare chars: distance: nan, ratio: 0.0 number_intervals.tex - content hashes: distance: 1670, ratio: 0.0 number_intervals.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+number_systems.tex - compare chars: distance: nan, ratio: 0.0 number_systems.tex - content hashes: distance: 1670, ratio: 0.0 number_systems.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+numerical_integration.tex - compare chars: distance: nan, ratio: 0.0 numerical_integration.tex - content hashes: distance: 1670, ratio: 0.0 numerical_integration.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+numeric_integrals.tex - compare chars: distance: nan, ratio: 0.0 numeric_integrals.tex - content hashes: distance: 1670, ratio: 0.0 numeric_integrals.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+prime_numbers.tex - compare chars: distance: nan, ratio: 0.0 prime_numbers.tex - content hashes: distance: 1670, ratio: 0.0 prime_numbers.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+prop_of_right-angles_triangle.tex - compare chars: distance: nan, ratio: 0.0 prop_of_right-angles_triangle.tex - content hashes: distance: 1670, ratio: 0.0 prop_of_right-angles_triangle.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+RW1.tex - compare chars: distance: nan, ratio: 0.0 RW1.tex - content hashes: distance: 1670, ratio: 0.0 RW1.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+RW2.tex - compare chars: distance: nan, ratio: 0.0 RW2.tex - content hashes: distance: 1670, ratio: 0.0 RW2.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+statistics.tex - compare chars: distance: nan, ratio: 100.0 statistics.tex - content hashes: distance: 1670, ratio: 0.0 statistics.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+taylor_series.tex - compare chars: distance: nan, ratio: 0.0 taylor_series.tex - content hashes: distance: 1670, ratio: 0.0 taylor_series.tex - Levenshtein: distance: 0, ratio: 100.0 
+
+trigonometry.tex - compare chars: distance: nan, ratio: 0.0 trigonometry.tex - content hashes: distance: 1670, ratio: 0.0 trigonometry.tex - Levenshtein: distance: 0, ratio: 100.0 
+
