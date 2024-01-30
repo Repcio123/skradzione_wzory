@@ -11,11 +11,11 @@ import webbrowser
 FILEBASE_FOLDER_DIRECTORY="tex_file_base\\tex"
 TEST_FOLDER_DIRECTORY="files_to_test"
 HTML_REPORT_DIRECTORY="html_reports"
-PLAGIAT_LEVEL_PERCENTAGES={"compare_chars":{"para":[60.0,80.0],
+PLAGIAT_LEVEL_PERCENTAGES={"compare chars":{"para":[60.0,80.0],
                                             "equa":[50.0,70.0]},
                             "compare_paragraph_hashes":{"para":[60.0,80.0],
                                                         "equa":[50.0,70.0]},
-                            "compare_hashes":{"para":[20.0,60.0],
+                            "content hashes":{"para":[20.0,60.0],
                                                 "equa":[20.0,60.0]},
                             "Levenshtein":{"para":[60.0,80.0],
                                                 "equa":[60.0,70.0]},  
@@ -92,9 +92,17 @@ class Left_Panel(CTkFrame):
         for test_document, *result in results:
             raw_text_results+=f"{test_document}:\n"
             for r in result:
-                raw_text_results+=f"{r['para'].method}: distance: {r['para'].distance}, match_count: {len(r['para'].matched)}, ratio: {r['para'].ratio}\n" #results in raw form
-
-
+                #print(r)
+                raw_text_results+=f"{r['para'].method} (paragraphs): distance: {r['para'].distance}, match_count: {len(r['para'].matched)}, ratio: {r['para'].ratio}\n" #results in raw form
+                if(r['para'].ratio>PLAGIAT_LEVEL_PERCENTAGES[r['para'].method]["para"][1]):
+                    raw_text_results+="High suspicions of plagarism\n"
+                elif(r['para'].ratio>PLAGIAT_LEVEL_PERCENTAGES[r['para'].method]["para"][0]):
+                    raw_text_results+="Medium suspicions of plagarism\n"
+                raw_text_results+=f"{r['equa'].method} (equations): distance: {r['equa'].distance}, match_count: {len(r['equa'].matched)}, ratio: {r['equa'].ratio}\n" #results in raw form
+                if(r['equa'].ratio>PLAGIAT_LEVEL_PERCENTAGES[r['equa'].method]["equa"][1]):
+                    raw_text_results+="High suspicions of plagarism\n"
+                elif(r['equa'].ratio>PLAGIAT_LEVEL_PERCENTAGES[r['equa'].method]["equa"][0]):
+                    raw_text_results+="Medium suspicions of plagarism\n"
         res = {}
 
         for document, *result in results:
